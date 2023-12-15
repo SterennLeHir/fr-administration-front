@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment';
 import { Observable, lastValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,13 +10,14 @@ const base_url: string = 'http://localhost:3000';
 export class ApiHelperService {
   constructor(private http: HttpClient) { }
 
+  // @ts-ignore
   public get({
     endpoint,
     queryParams = {},
   }: {
     endpoint: string;
     queryParams?: any;
-  }): Promise<any> {environment
+  }): Promise<any> {
     return this.request({ endpoint, method: 'GET', queryParams });
   }
 
