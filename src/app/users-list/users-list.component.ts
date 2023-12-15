@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableModule} from "@angular/material/table";
 import {CommonModule} from "@angular/common";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {lastValueFrom, Observable} from "rxjs";
 
 export class User {
   constructor(
@@ -19,14 +21,20 @@ const users: User[] = [
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [CommonModule, MatTableModule],
+  imports: [CommonModule, MatTableModule, HttpClientModule],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.css'
 })
 export class UsersListComponent implements OnInit {
+  constructor(
+    private http: HttpClient
+  ) {}
+
   ngOnInit(): void {
+    const request: Observable<any> = this.http.get('http://localhost:3000/users', { observe: 'response' });
+    lastValueFrom(request).then(response => this.dataSource = response.body);
   }
   displayedColumns: string[] = ['id', 'lastname', 'firstname', 'age'];
-  dataSource = users;
+  dataSource= [];
 
 }
