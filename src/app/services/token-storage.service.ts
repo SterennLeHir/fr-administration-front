@@ -12,7 +12,7 @@ export class TokenStorageService {
   }
   public save(token: string): void {
     localStorage.removeItem(TOKEN_KEY);
-    localStorage.removeItem(USERNAME_KEY );
+    localStorage.removeItem(USERNAME_KEY);
     localStorage.removeItem(IS_LOGGED_IN);
     localStorage.setItem(TOKEN_KEY, token);
     localStorage.setItem(IS_LOGGED_IN, IS_LOGGED);

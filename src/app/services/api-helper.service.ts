@@ -100,6 +100,7 @@ export class ApiHelperService {
     }
 
     return await lastValueFrom(req).then((res) => {
+      console.log(JSON.stringify(res.body));
       return res.body;
     });
   }
