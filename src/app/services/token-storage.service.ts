@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Observable, of} from "rxjs";
 const TOKEN_KEY = 'token';
 const USERNAME_KEY = 'username';
 const IS_LOGGED_IN = 'isLoggedIn';
