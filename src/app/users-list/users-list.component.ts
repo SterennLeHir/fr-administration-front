@@ -35,7 +35,7 @@ export class UsersListComponent implements OnInit {
     const request: Observable<any> = this.http.get('http://localhost:3000/users', { observe: 'response' });
     lastValueFrom(request).then(response => this.dataSource = response.body);
   }
-  displayedColumns: string[] = ['id', 'lastname', 'firstname', 'age'];
+  displayedColumns: string[] = ['id', 'lastname', 'firstname', 'age', 'email'];
   dataSource= [];
 
 }
