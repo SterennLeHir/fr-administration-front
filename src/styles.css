@@ -2,3 +2,8 @@
 
 html, body { height: 100%}
 body { margin: 0; width:auto; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h1 {
+  color: blue;
+  text-align:center;
+  font-size: large;
+}

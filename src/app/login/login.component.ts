@@ -3,6 +3,7 @@ import {ApiHelperService} from "../services/api-helper.service";
 import {HttpClientModule} from "@angular/common/http";
 import {TokenStorageService} from "../services/token-storage.service";
 import {Router} from "@angular/router";
+import {User} from "../users-list/users-list.component";
 
 @Component({
   selector: 'app-login',
@@ -19,12 +20,13 @@ constructor(
 ) {}
 
 login(): void {
-    const username: string = (document.getElementById('username') as HTMLInputElement).value;
-    const password: string = (document.getElementById('password') as HTMLInputElement).value;
-    this.api.post({endpoint: '/auth/login', data: { username, password }}).then(response => {
-      this.tokenStorageService.save(response.access_token);
-      if(this.tokenStorageService.isLogged()) this.router.navigateByUrl('/users');
-      else console.log("Mauvais mot de passe et/ou username");
-    })
-    };
+  const email: string = (document.getElementById('email') as HTMLInputElement).value;
+  const password: string = (document.getElementById('password') as HTMLInputElement).value;
+  this.api.post({ endpoint: '/auth/login', data: { username: email, password }}).then(response => {
+    console.log("La réponse est : ${response}");
+    this.tokenStorageService.save(response.access_token);
+    if(this.tokenStorageService.isLogged()) this.router.navigateByUrl('/home');
+    else console.log("Mauvais mot de passe et/ou email");
+  })
+};
 }

@@ -1,12 +1,12 @@
 import {Component, Inject, Input} from '@angular/core';
 import {TokenStorageService} from "../services/token-storage.service";
 import {CommonModule} from "@angular/common";
-import {Router} from "@angular/router";
+import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
