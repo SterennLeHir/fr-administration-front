@@ -2,8 +2,17 @@
 
 html, body { height: 100%}
 body { margin: 0; width:auto; font-family: Roboto, "Helvetica Neue", sans-serif; }
-h1 {
-  color: blue;
+
+h1, p {
+  color: #0A369D;
   text-align:center;
-  font-size: large;
 }
+h1 {
+  font-size: xxx-large;
+}
+button {
+  background-color: #0A369D;
+  color:white;
+}
+
+

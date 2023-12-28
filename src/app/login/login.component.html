@@ -1,11 +1,15 @@
 <h1>SE CONNECTER</h1>
-<div class="form-group">
-  <label for="email">Adresse mail</label>
-  <input type="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="john.doe@example.com">
+<p>Bienvenue sur Asso' Rennes, le service public recensant les associations dans Rennes. <br> Avant de pouvoir commencer, veuillez-vous connecter.</p>
+<div id="form">
+  <div class="form-group">
+    <label for="email">Adresse mail</label>
+    <input type="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="john.doe@example.com">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id = "password" class="form-control"  placeholder="monmotdepasse">
+  </div>
 </div>
-<div class="form-group">
-  <label for="password">Password</label>
-  <input type="password" id = "password" class="form-control"  placeholder="monmotdepasse">
-</div>
-<button (click)="login()" class="btn btn-primary">Se connecter</button>
+
+<button (click)="login()" id = "login" class="btn btn-primary">Se connecter</button>
 

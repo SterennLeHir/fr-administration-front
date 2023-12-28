@@ -1,0 +1,16 @@
+a {
+  color: #0A369D;
+}
+
+#image_nav {
+  height : 50px;
+  width : auto;
+}
+
+.menu {
+  display: flex;              /* Transformation en flexbox */
+}
+
+.menu li {
+  list-style-type: none ;       /* Suppression des puces */
+}
