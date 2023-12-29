@@ -2,7 +2,7 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 75px;
 }
 
 #bar{
@@ -39,6 +39,11 @@ nav{
 #logo{
   height: 17%;
   width: 17%;
+}
+
+#logo2{
+  height: 10%;
+  width: 10%;
 }
 
 #account{

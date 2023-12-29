@@ -1,19 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%}
-body { margin: 0; width:auto; font-family: Inter, "Helvetica Neue", sans-serif;!important;}
+body {
+  margin: 0;
+  width:auto;
+  font-family: Inter, sans-serif !important;
+}
 
 h1, p {
   color: #0A369D;
   text-align:center;
+  font-family: Inter, sans-serif !important;
 }
+
 h1 {
   font-size: xxx-large !important;
   font-weight: bold !important;
 }
+
+
+
 button {
-  background-color: #0A369D;
-  color:white;
+  background-color: #0A369D !important;
+  color:white !important;
 }
 
 

@@ -10,7 +10,9 @@
     </div>
     <div class = "menu2">
         <a id = "logout" *ngIf="isLogged" (click)="logout()">Se déconnecter</a>
-        <a id = "account" [routerLink]="['/account']" routerLinkActive="active">Mon compte</a>
+        <a id = "account" [routerLink]="['/account']" routerLinkActive="active">Mon compte
+          <img src = "../../assets/images/Utilisateur.png" alt="user" id = "logo2">
+        </a>
     </div>
   </nav>
     <hr id = "line">
