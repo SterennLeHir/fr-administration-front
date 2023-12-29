@@ -1,16 +1,42 @@
-a {
+header{
+  display: flex;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+#bar{
+  background-color: green;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+nav{
+  background-color: antiquewhite;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu1 a {
   color: #0A369D;
+  margin-right: 50px;
 }
 
-#image_nav {
-  height : 50px;
-  width : auto;
+.menu2 a {
+  color: #0A369D;
+  margin-left: 50px;
 }
 
-.menu {
-  display: flex;              /* Transformation en flexbox */
-}
-
-.menu li {
-  list-style-type: none ;       /* Suppression des puces */
+#line{
+  background-color: #0A369D;
+  width: 100%;
+  height: 2px;
+  margin-bottom: auto;
 }

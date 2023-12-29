@@ -1,20 +1,17 @@
-<nav class = "navbar">
-  <div>
-    <ul class="menu">
-      <li>
+<header>
+  <div id ="bar">
+  <nav>
+    <div class = "menu1">
+        <a class = "logo">logo</a>
         <a [routerLink]="['/associations']" routerLinkActive = "active"> Associations <span class="sr-only"></span></a>
-      </li>
-      <li>
         <a [routerLink]="['/users']" routerLinkActive = "active"> Utilisateurs <span class="sr-only"></span></a>
-      </li>
-    </ul>
-    <div id = "logout" *ngIf="isLogged">
-      <a (click)="logout()"><button>Se déconnecter</button></a>
     </div>
-    <div id = "account">
-      <a [routerLink]="['/account']" routerLinkActive="active">
-      <img src="assets/images/Utilisateur.png" id="image_nav" alt="" >
-      </a>
+    <div class = "menu2">
+        <a id = "logout" *ngIf="isLogged" (click)="logout()">Se déconnecter</a>
+        <a id = "account" [routerLink]="['/account']" routerLinkActive="active">Mon compte</a>
     </div>
+  </nav>
+    <hr id = "line">
   </div>
-</nav>
+
+</header>
