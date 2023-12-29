@@ -3,14 +3,16 @@ import {NavComponent} from "../nav/nav.component";
 import {HttpClient} from "@angular/common/http";
 import {lastValueFrom, Observable} from "rxjs";
 import {MatTableModule} from "@angular/material/table";
+import {FooterComponent} from "../footer/footer.component";
 
 @Component({
   selector: 'app-associations-list',
   standalone: true,
-  imports: [
-    NavComponent,
-    MatTableModule
-  ],
+    imports: [
+        NavComponent,
+        MatTableModule,
+        FooterComponent
+    ],
   templateUrl: './associations-list.component.html',
   styleUrl: './associations-list.component.css'
 })

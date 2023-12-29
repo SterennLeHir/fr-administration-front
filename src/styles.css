@@ -5,6 +5,7 @@ body {
   margin: 0;
   width:auto;
   font-family: Inter, sans-serif !important;
+  overflow-x: hidden; /*pas d'overflow sur l'axe x*/
 }
 
 h1, p {

@@ -4,6 +4,7 @@ import {CommonModule} from "@angular/common";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {lastValueFrom, Observable} from "rxjs";
 import {NavComponent} from "../nav/nav.component";
+import {FooterComponent} from "../footer/footer.component";
 
 export class User {
   constructor(
@@ -22,7 +23,7 @@ const users: User[] = [
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [CommonModule, MatTableModule, HttpClientModule, NavComponent],
+    imports: [CommonModule, MatTableModule, HttpClientModule, NavComponent, FooterComponent],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.css'
 })
