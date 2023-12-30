@@ -13,14 +13,16 @@ import {Router} from "@angular/router";
 export class ModificationInfosComponent {
   constructor(
     private api: ApiHelperService,
-    private router: Router
+    private router: Router,
+    private token: TokenStorageService
   ) {}
 
   validate(): void {
+    const prenom: string = (document.getElementById('prenom') as HTMLInputElement).value;
+    const nom: string = (document.getElementById('nom') as HTMLInputElement).value;
+    const age: string = (document.getElementById('age') as HTMLInputElement).value;
     const email: string = (document.getElementById('email') as HTMLInputElement).value;
-    const password: string = (document.getElementById('password') as HTMLInputElement).value;
-    this.api.put({ endpoint: '/auth/login', data: { username: email, password }}).then(response => {
-      console.log("La réponse est : ${response}");
+    this.api.put({ endpoint: '/users/'+ this.token.getUserId(), data: { firstname: prenom, lastname: nom, age, email}}).then(() => {
       this.router.navigateByUrl('/account');
     })
   };

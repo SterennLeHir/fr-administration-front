@@ -6,6 +6,7 @@ import {HttpClient} from "@angular/common/http";
 import {ApiHelperService} from "../services/api-helper.service";
 import {TokenStorageService} from "../services/token-storage.service";
 import {NgIf} from "@angular/common";
+import {lastValueFrom, Observable} from "rxjs";
 
 @Component({
   selector: 'app-account',
@@ -15,9 +16,10 @@ import {NgIf} from "@angular/common";
   styleUrl: './account.component.css'
 })
 export class AccountComponent implements OnInit {
-  constructor(private token: TokenStorageService, private api: ApiHelperService) {}
+  constructor(private token: TokenStorageService, private api: ApiHelperService, private http:HttpClient) {}
   ngOnInit(): void {
-    this.api.get({endpoint : '/users/'+this.token.getUserId()}).then(response => this.user = response);
+    const request: Observable<any> = this.http.get('http://localhost:3000/users/' + this.token.getUserId(), { observe: 'response' });
+    lastValueFrom(request).then(response => this.user = response.body);
   }
   user!:any;
 }
