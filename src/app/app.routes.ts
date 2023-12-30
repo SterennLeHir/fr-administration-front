@@ -5,12 +5,14 @@ import {authGuard} from './guards/auth.guard'
 import {AssociationsListComponent} from "./associations-list/associations-list.component";
 import {HomeComponent} from "./home/home.component";
 import {AccountComponent} from "./account/account.component";
+import {UserDetailItemComponent} from "./user-detail-item/user-detail-item.component";
 
 export const routes: Routes = [
-  {path: 'users', component: UsersListComponent},
+  {path: 'users', component: UsersListComponent, canActivate:[authGuard]},
   {path: 'login', component: LoginComponent},
-  {path: '', component: LoginComponent },
-  {path: 'associations', component:AssociationsListComponent},
+  {path: '', component: LoginComponent},
+  {path: 'associations', component:AssociationsListComponent, canActivate:[authGuard]},
   {path: 'home', component:HomeComponent, canActivate:[authGuard]},
-  {path: 'account', component:AccountComponent}
+  {path: 'account', component:AccountComponent},
+  {path: 'users/:id', component:UserDetailItemComponent}
 ];

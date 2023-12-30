@@ -8,18 +8,27 @@ body {
   overflow-x: hidden; /*pas d'overflow sur l'axe x*/
 }
 
-h1, p {
+h1, h2, h3, p {
   color: #0A369D;
   text-align:center;
   font-family: Inter, sans-serif !important;
 }
-
+p {
+  font-size: 16px;
+}
 h1 {
-  font-size: xxx-large !important;
+  font-size: 90px !important;
   font-weight: bold !important;
 }
 
+h2 {
+  font-size: 80px !important;
+  font-weight: bold !important;
+}
 
+h3 {
+  font-size: 35px !important;
+}
 
 button {
   background-color: #0A369D !important;

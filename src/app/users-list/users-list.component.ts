@@ -5,6 +5,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {lastValueFrom, Observable} from "rxjs";
 import {NavComponent} from "../nav/nav.component";
 import {FooterComponent} from "../footer/footer.component";
+import {UserItemComponent} from "../user-item/user-item.component";
 
 export class User {
   constructor(
@@ -12,18 +13,15 @@ export class User {
     public password: string,
     public lastname: string,
     public firstname: string,
-    public age: number
+    public age: number,
+    public email: string
   ) {}
 }
-const users: User[] = [
-  new User(0, 'mdp1', 'Doe', 'John', 23),
-  new User(1, 'mdp2', 'Doe', 'Jane', 32)
-]
 
 @Component({
   selector: 'app-users-list',
   standalone: true,
-    imports: [CommonModule, MatTableModule, HttpClientModule, NavComponent, FooterComponent],
+  imports: [CommonModule, MatTableModule, HttpClientModule, NavComponent, FooterComponent, UserItemComponent],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.css'
 })
@@ -36,6 +34,7 @@ export class UsersListComponent implements OnInit {
     const request: Observable<any> = this.http.get('http://localhost:3000/users', { observe: 'response' });
     lastValueFrom(request).then(response => this.dataSource = response.body);
   }
+
   displayedColumns: string[] = ['id', 'lastname', 'firstname', 'age', 'email'];
   dataSource= [];
 

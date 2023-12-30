@@ -1,0 +1,9 @@
+<app-nav></app-nav>
+<div *ngIf="user">
+  <h2>{{user.firstname}} {{user.lastname | uppercase}}</h2><br>
+  <h3>Contact</h3>
+  <p>{{user.email}}</p>
+  <h3>Informations</h3>
+  <p>{{user.age}}</p>
+</div>
+<app-footer></app-footer>
