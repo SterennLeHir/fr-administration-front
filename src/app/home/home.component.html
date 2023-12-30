@@ -1,11 +1,13 @@
 <app-nav></app-nav>
-<div class = "main"><div class = "wrapper">
-<h1> QUE CHERCHEZ-VOUS ? </h1>
-<p> Trouvez une association ou un membre</p>
-  <div class="row justify-content-center mt-4">
-    <button  class="btn btn-primary">Associations</button>
-    <button  class="btn btn-primary">Utilisateurs</button>
+<div class = "main">
+  <div class = "wrapper">
+    <h1> QUE CHERCHEZ-VOUS ? </h1>
+    <p> Trouvez une association ou un membre</p>
+    <div class="row justify-content-center mt-4">
+      <button  class="btn btn-primary"  id = "btn left" [routerLink]="['/associations']" routerLinkActive = "active">Associations</button>
+      <button  class="btn btn-primary" id = "btn right" [routerLink]="['/users']" routerLinkActive = "active">Utilisateurs</button>
+    </div>
   </div>
-</div></div>
+</div>
 <app-footer></app-footer>
 

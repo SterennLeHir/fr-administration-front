@@ -8,3 +8,10 @@
   height: 100%;
   vertical-align: middle;
 }
+
+#btn\ left {
+  margin-right: 10%;
+}
+#btn\ right {
+  margin-left: 10%;
+}

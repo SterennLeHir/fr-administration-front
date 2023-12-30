@@ -5,8 +5,8 @@
         <a [routerLink]="['/home']" routerLinkActive = "active">
           <img src = "../../assets/images/assorennes.png" alt="logo" id = "logo">
         </a>
-        <a [routerLink]="['/associations']" routerLinkActive = "active"> Les associations <span class="sr-only"></span></a>
-        <a [routerLink]="['/users']" routerLinkActive = "active"> Les utilisateurs <span class="sr-only"></span></a>
+        <a [routerLink]="['/associations']" routerLinkActive = "active">Les associations<span class="sr-only"></span></a>
+        <a [routerLink]="['/users']" routerLinkActive = "active">Les utilisateurs<span class="sr-only"></span></a>
     </div>
     <div class = "menu2">
         <a id = "logout" *ngIf="isLogged" (click)="logout()">Se déconnecter</a>
