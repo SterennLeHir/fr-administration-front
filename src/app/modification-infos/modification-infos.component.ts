@@ -19,7 +19,7 @@ export class ModificationInfosComponent {
   validate(): void {
     const email: string = (document.getElementById('email') as HTMLInputElement).value;
     const password: string = (document.getElementById('password') as HTMLInputElement).value;
-    this.api.post({ endpoint: '/auth/login', data: { username: email, password }}).then(response => {
+    this.api.put({ endpoint: '/auth/login', data: { username: email, password }}).then(response => {
       console.log("La réponse est : ${response}");
       this.router.navigateByUrl('/account');
     })
