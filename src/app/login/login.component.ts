@@ -24,7 +24,7 @@ login(): void {
   const password: string = (document.getElementById('password') as HTMLInputElement).value;
   this.api.post({ endpoint: '/auth/login', data: { username: email, password }}).then(response => {
     console.log("La réponse est : ${response}");
-    this.tokenStorageService.save(response.access_token);
+    this.tokenStorageService.save(response.access_token, response.id);
     if(this.tokenStorageService.isLogged()) this.router.navigateByUrl('/home');
     else console.log("Mauvais mot de passe et/ou email");
   })
