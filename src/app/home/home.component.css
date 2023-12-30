@@ -21,3 +21,7 @@ h1,h3 {
 button {
   border-radius: 18px;
 }
+row justify-content-center mt-4 {
+  display: flex;
+  justify-content: space-between;
+}

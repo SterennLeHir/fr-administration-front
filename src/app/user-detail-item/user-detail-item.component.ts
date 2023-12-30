@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import {lastValueFrom} from "rxjs";
 import {NgIf, UpperCasePipe} from "@angular/common";
 import {ApiHelperService} from "../services/api-helper.service";
 import {NavComponent} from "../nav/nav.component";
@@ -21,7 +20,7 @@ import {FooterComponent} from "../footer/footer.component";
 })
 export class UserDetailItemComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private api: ApiHelperService) {}
+  constructor(private route: ActivatedRoute, private api: ApiHelperService) {}
 
   ngOnInit(): void {
     this.route.paramMap
@@ -35,5 +34,5 @@ export class UserDetailItemComponent implements OnInit {
       })
   }
 
-  @Input() user!:any
+  user!:any
 }
