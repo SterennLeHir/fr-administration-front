@@ -6,6 +6,7 @@ import {AssociationsListComponent} from "./associations-list/associations-list.c
 import {HomeComponent} from "./home/home.component";
 import {AccountComponent} from "./account/account.component";
 import {UserDetailItemComponent} from "./user-detail-item/user-detail-item.component";
+import {ModificationInfosComponent} from "./modification-infos/modification-infos.component";
 
 export const routes: Routes = [
   {path: 'users', component: UsersListComponent, canActivate:[authGuard]},
@@ -14,5 +15,6 @@ export const routes: Routes = [
   {path: 'associations', component:AssociationsListComponent, canActivate:[authGuard]},
   {path: 'home', component:HomeComponent, canActivate:[authGuard]},
   {path: 'account', component:AccountComponent},
-  {path: 'users/:id', component:UserDetailItemComponent}
+  {path: 'users/:id', component:UserDetailItemComponent},
+  {path: 'modifier-mes-informations', component:ModificationInfosComponent}
 ];

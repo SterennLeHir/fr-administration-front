@@ -9,8 +9,8 @@
         <a [routerLink]="['/users']" routerLinkActive = "active">Les utilisateurs<span class="sr-only"></span></a>
     </div>
     <div class = "menu2">
-        <a id = "logout" *ngIf="isLogged" (click)="logout()">Se déconnecter</a>
-        <a id = "account" [routerLink]="['/account']" routerLinkActive="active">Mon compte
+        <a id = "logout" *ngIf="isLogged" (click)="logout()" routerLinkActive="active">Se déconnecter</a>
+        <a id = "account" [routerLink]="['/account']">Mon compte
           <img src = "../../assets/images/Utilisateur.png" alt="user" id = "logo2">
         </a>
     </div>
