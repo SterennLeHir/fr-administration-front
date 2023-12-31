@@ -75,7 +75,7 @@ export class ApiHelperService {
     const requestOptions = {
       params: queryParams,
     };
-
+    console.log("requête : ");
     console.log(method, url, JSON.stringify(requestOptions), JSON.stringify(data));
 
     let req: Observable<any>;
