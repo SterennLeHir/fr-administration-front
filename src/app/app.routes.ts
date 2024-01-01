@@ -7,14 +7,16 @@ import {HomeComponent} from "./home/home.component";
 import {AccountComponent} from "./account/account.component";
 import {UserDetailItemComponent} from "./user-detail-item/user-detail-item.component";
 import {ModificationInfosComponent} from "./modification-infos/modification-infos.component";
+import {RegisterComponent} from "./register/register.component";
 
 export const routes: Routes = [
   {path: 'users', component: UsersListComponent, canActivate:[authGuard]},
   {path: 'login', component: LoginComponent},
-  {path: '', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: 'associations', component:AssociationsListComponent, canActivate:[authGuard]},
   {path: 'home', component:HomeComponent, canActivate:[authGuard]},
   {path: 'account', component:AccountComponent},
   {path: 'users/:id', component:UserDetailItemComponent},
-  {path: 'modifier-mes-informations', component:ModificationInfosComponent}
+  {path: 'modifier-mes-informations', component:ModificationInfosComponent},
+  {path: '', component: LoginComponent}
 ];

@@ -1,0 +1,41 @@
+<div class = "main">
+  <div class = "wrapper">
+    <h1>S'INSCRIRE</h1>
+    <p>Veuillez saisir vos informations pour vous inscrire.</p>
+    <div id="form">
+      <div class = "form-group">
+        <div class="form-infos">
+          <label for="nom">Nom*</label>
+          <input type="text" id="nom" class="form-control" aria-describedby="emailHelp" placeholder="Doe">
+        </div>
+        <div class="form-infos">
+          <label for="age">Âge*</label>
+          <input type="number" id = "age" class="form-control"  placeholder="18">
+        </div>
+      </div>
+      <div class = "form-group">
+        <div class="form-infos">
+          <label for="prenom">Prénom*</label>
+          <input type="text" id = "prenom" class="form-control"  placeholder="John">
+        </div>
+        <div class="form-infos">
+          <label for="email">Adresse email*</label>
+          <input type="email" id = "email" class="form-control"  placeholder="john.doe@example.com">
+        </div>
+        <div class="form-infos">
+          <label for="mdp">Mot de passe*</label>
+          <input type="password" id = "mdp" class="form-control"  placeholder="******">
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <button (click)="register()" class="btn btn-primary">Connexion</button>
+    </div>
+    <div *ngIf="messageError">
+      <p id = "erreur"> Cet utilisateur existe déjà, veuillez vous connecter.</p>
+      <div class="row justify-content-center mt-4">
+        <a [routerLink]="['/login']" routerLinkActive = "active" class="btn btn-primary">Se connecter</a>
+      </div>
+    </div>
+  </div>
+</div>
