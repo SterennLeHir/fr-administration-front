@@ -1,0 +1,35 @@
+<app-nav></app-nav>
+<div *ngIf="association">
+  <h2>{{association.name |uppercase}}</h2><br>
+  <p>{{association.description}}</p>
+  <div class = "informations">
+    <div class = "info">
+      <img src = "assets/images/Minutes.svg">
+      <h5> Comptes rendus </h5>
+      <ul class = "list">
+        <li *ngFor = "let minute of minutes">
+          <a [routerLink]="['minutes', minute.id]">{{minute.date}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class = "info">
+      <img src = "assets/images/Utilisateur.png">
+      <h5>Membres</h5>
+      <ul class = "list">
+        <li *ngFor = "let member of members">
+          <p>{{member.firstname}} {{member.lastname | uppercase}}</p>
+        </li>
+      </ul>
+    </div>
+    <!--<div class = "info">
+      <h5>Rôle</h5>
+      <ul class = "list">
+        <li *ngFor = "let role of roles">
+          <p>{{role}}</p>
+        </li>
+      </ul>
+    </div>-->
+  </div>
+</div>
+<app-footer></app-footer>
+

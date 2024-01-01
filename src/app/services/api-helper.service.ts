@@ -75,12 +75,12 @@ export class ApiHelperService {
     const requestOptions = {
       params: queryParams,
     };
-    console.log("requête : ");
+
     console.log(method, url, JSON.stringify(requestOptions), JSON.stringify(data));
 
     let req: Observable<any>;
     if (methodWanted === 'get') {
-      req = this.http.get(url, { ...requestOptions, observe: 'response' });
+      req = this.http.get(url, { ...requestOptions, observe: 'response'});
     } else if (methodWanted === 'post') {
       req = this.http.post(url, data, {
         ...requestOptions,
@@ -100,6 +100,7 @@ export class ApiHelperService {
     }
 
     return await lastValueFrom(req).then((res) => {
+      console.log(res);
       console.log(JSON.stringify(res.body));
       return res.body;
     });

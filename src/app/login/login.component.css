@@ -21,4 +21,30 @@
   margin: auto;
 }
 
+a {
+  background-color: #0A369D;
+  color: white;
+  border-radius: 18px;
+  margin-right: 25%;
+  margin-left: 25%;
+}
 
+.boutons {
+  display:flex;
+  flex-direction: row;
+  text-align: center;
+  margin:auto;
+  justify-content: center;
+}
+
+h1,p {
+  margin-bottom: 50px;
+}
+
+#btn\ left{
+  margin-right: 100px;
+}
+
+#btn\ right{
+  margin-left: 100px;
+}

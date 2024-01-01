@@ -1,0 +1,18 @@
+<app-nav></app-nav>
+<div *ngIf="minute">
+  <h2>COMPTE RENDU DU {{minute.date}}</h2><br>
+  <p>{{minute.content}}</p>
+  <div class = "informations">
+    <div class = "info">
+      <img src = "assets/images/Minutes.svg">
+      <h5> Votants </h5>
+      <ul class = "list">
+        <li *ngFor = "let voter of voters">
+          <p>{{voter.firstname}} {{voter.lastname | uppercase}} </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+

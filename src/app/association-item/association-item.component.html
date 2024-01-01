@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-content>
+    <div class = "container" *ngIf="myData">
+      <h3>{{myData.name}}</h3>
+      <p>{{myData.description}}</p>
+      <a [routerLink]="['/associations', myData.id]" routerLinkActive = "active" class="btn btn-primary" id = "btn right">Voir plus</a>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -26,6 +26,17 @@ h1 {
 }
 
 #erreur {
+  display: flex;
+  flex-direction : row;
+  text-align: center;
+}
+#erreur p{
   color: red;
+}
+
+a {
+  background-color: #0A369D;
+  color: white;
+  border-radius: 18px;
 }
 

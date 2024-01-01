@@ -31,11 +31,10 @@ export class UsersListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const request: Observable<any> = this.http.get('http://localhost:3000/users', { observe: 'response' });
-    lastValueFrom(request).then(response => this.dataSource = response.body);
+    const userRequest: Observable<any> = this.http.get('http://localhost:3000/users', { observe: 'response' });
+    lastValueFrom(userRequest).then(response => this.dataSource = response.body);
   }
 
-  displayedColumns: string[] = ['id', 'lastname', 'firstname', 'age', 'email'];
-  dataSource= [];
+  dataSource: User[]= [];
 
 }

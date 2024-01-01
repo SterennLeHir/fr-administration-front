@@ -30,8 +30,6 @@ export class RegisterComponent {
     const age : string = (document.getElementById('age') as HTMLInputElement).value;
     const email: string = (document.getElementById('email') as HTMLInputElement).value;
     const password: string = (document.getElementById('mdp') as HTMLInputElement).value;
-    console.log("éléments : ")
-    console.log(lastname, firstname, age, email, password);
     this.api.post({ endpoint: '/auth/register', data: { firstname, lastname, age, email, password }}).then(response => {
       this.api.post({ endpoint: '/auth/login', data: { username: email, password }}).then(response => {
         this.tokenStorageService.save(response.access_token, response.id);
