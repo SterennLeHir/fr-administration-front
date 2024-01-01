@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FooterComponent} from "../footer/footer.component";
 import {NavComponent} from "../nav/nav.component";
 import {NgForOf, NgIf, UpperCasePipe} from "@angular/common";
-import {ActivatedRoute, RouterLink} from "@angular/router";
+import {ActivatedRoute, RouterLink, RouterLinkActive} from "@angular/router";
 import {ApiHelperService} from "../services/api-helper.service";
 import {Association} from "../user-detail-item/user-detail-item.component";
 import {User} from "../users-list/users-list.component";
@@ -25,7 +25,8 @@ export class Minute {
     NgForOf,
     NgIf,
     UpperCasePipe,
-    RouterLink
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './association-detail-item.component.html',
   styleUrl: './association-detail-item.component.css'

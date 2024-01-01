@@ -4,11 +4,16 @@ import {TokenStorageService} from "../services/token-storage.service";
 import {Router} from "@angular/router";
 import {lastValueFrom, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {NavComponent} from "../nav/nav.component";
+import {FooterComponent} from "../footer/footer.component";
 
 @Component({
   selector: 'app-modification-infos',
   standalone: true,
-  imports: [],
+  imports: [
+    NavComponent,
+    FooterComponent
+  ],
   templateUrl: './modification-infos.component.html',
   styleUrl: './modification-infos.component.css'
 })

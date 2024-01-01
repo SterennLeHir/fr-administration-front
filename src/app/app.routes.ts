@@ -9,6 +9,7 @@ import {UserDetailItemComponent} from "./user-detail-item/user-detail-item.compo
 import {ModificationInfosComponent} from "./modification-infos/modification-infos.component";
 import {RegisterComponent} from "./register/register.component";
 import {AssociationDetailItemComponent, Minute} from "./association-detail-item/association-detail-item.component";
+import {ModificationAssociationComponent} from "./modification-association/modification-association.component";
 
 export const routes: Routes = [
   {path: 'users', component: UsersListComponent, canActivate:[authGuard]},
@@ -21,5 +22,6 @@ export const routes: Routes = [
   {path: 'associations/:id', component:AssociationDetailItemComponent, canActivate:[authGuard]},
   {path: 'associations/:id/minutes/:idMinute', component: Minute, canActivate: [authGuard]},
   {path: 'modifier-mes-informations', component:ModificationInfosComponent, canActivate:[authGuard]},
+  {path: 'modifier-association/:id', component:ModificationAssociationComponent, canActivate:[authGuard]},
   {path: '', component: LoginComponent}
 ];
