@@ -15,3 +15,9 @@
 input {
   width: auto;
 }
+
+button {
+  color:white;
+  background-color: #0A369D;
+  border-radius: 18px;
+}

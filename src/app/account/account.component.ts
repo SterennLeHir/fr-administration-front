@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NavComponent} from "../nav/nav.component";
 import {FooterComponent} from "../footer/footer.component";
-import {ActivatedRoute, RouterLink, RouterLinkActive} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {ApiHelperService} from "../services/api-helper.service";
 import {TokenStorageService} from "../services/token-storage.service";
@@ -16,10 +16,24 @@ import {lastValueFrom, Observable} from "rxjs";
   styleUrl: './account.component.css'
 })
 export class AccountComponent implements OnInit {
-  constructor(private token: TokenStorageService, private api: ApiHelperService, private http:HttpClient) {}
+  constructor(private token: TokenStorageService, private api: ApiHelperService, private http:HttpClient, private route: Router) {}
+
+  user!:any;
+  id !: number
   ngOnInit(): void {
-    const request: Observable<any> = this.http.get('http://localhost:3000/users/' + this.token.getUserId(), { observe: 'response' });
+    this.id = this.token.getUserId();
+    const request: Observable<any> = this.http.get('http://localhost:3000/users/' + this.id, { observe: 'response' });
     lastValueFrom(request).then(response => this.user = response.body);
   }
-  user!:any;
+  delete(): void {
+    this.api.delete({endpoint: '/users/' + this.id}).then(response => {
+      console.log("Compte supprimé");
+      this.route.navigateByUrl('');
+    }
+    )
+      .catch(e => console.log(e.error.errorMessage));
+
+  }
+
+
 }
