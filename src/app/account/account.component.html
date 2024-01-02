@@ -1,6 +1,9 @@
 <app-nav></app-nav>
 <div class = "container" *ngIf="user">
-  <h2>MON COMPTE</h2>
+  <div class = "header">
+    <h2>MON COMPTE</h2>
+    <a  class="btn btn-primary" id = "delete btn" (click)="delete()" routerLinkActive = "active">Supprimer mon compte</a>
+  </div>
   <h3>Informations</h3>
   <div class = "informations">
     <div class = "detail-info">
@@ -17,8 +20,8 @@
     </div>
   </div>
   <div class = "buttons">
-    <button  class="btn btn-primary"  id = "btn left" [routerLink]="['/modifier-mes-informations']" routerLinkActive = "active">Modifier mes informations</button>
-    <button  class="btn btn-primary" id = "btn right" [routerLink]="['/changer-mot-de-passes']" routerLinkActive = "active">Changer de mot de passe</button>
+    <a  class="btn btn-primary"  id = "btn left" [routerLink]="['/modifier-mes-informations']" routerLinkActive = "active">Modifier mes informations</a>
+    <a  class="btn btn-primary" id = "btn right" [routerLink]="['/modifier-mot-de-passe']" routerLinkActive = "active">Changer de mot de passe</a>
   </div>
 </div>
 <app-footer></app-footer>

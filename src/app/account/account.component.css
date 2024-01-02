@@ -18,3 +18,20 @@ h2, h3, p {
 img {
   margin-bottom: 20px;
 }
+
+a {
+  color:white;
+  background-color: #0A369D;
+  border-radius: 18px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
+#delete\ btn {
+  height: 40px;
+  background-color: red;
+  border-color: red;
+}

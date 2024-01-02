@@ -10,6 +10,7 @@ import {ModificationInfosComponent} from "./modification-infos/modification-info
 import {RegisterComponent} from "./register/register.component";
 import {AssociationDetailItemComponent, Minute} from "./association-detail-item/association-detail-item.component";
 import {ModificationAssociationComponent} from "./modification-association/modification-association.component";
+import {ModificationPasswordComponent} from "./modification-password/modification-password.component";
 
 export const routes: Routes = [
   {path: 'users', component: UsersListComponent, canActivate:[authGuard]},
@@ -20,8 +21,11 @@ export const routes: Routes = [
   {path: 'account', component:AccountComponent, canActivate:[authGuard]},
   {path: 'users/:id', component:UserDetailItemComponent, canActivate:[authGuard]},
   {path: 'associations/:id', component:AssociationDetailItemComponent, canActivate:[authGuard]},
-  {path: 'associations/:id/minutes/:idMinute', component: Minute, canActivate: [authGuard]},
+  {path: 'minute/:id', component: Minute, canActivate: [authGuard]},
   {path: 'modifier-mes-informations', component:ModificationInfosComponent, canActivate:[authGuard]},
   {path: 'modifier-association/:id', component:ModificationAssociationComponent, canActivate:[authGuard]},
-  {path: '', component: LoginComponent}
+  {path: 'modifier-mot-de-passe', component:ModificationPasswordComponent, canActivate:[authGuard]},
+  {path: '', component: LoginComponent},
+  {path: '*', component: LoginComponent},
+
 ];
