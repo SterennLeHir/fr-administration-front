@@ -1,5 +1,8 @@
-div {
-  text-align: center;
+#centered-div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15%;
+  margin-left: 15%;
 }
 
 h2 {
@@ -27,4 +30,25 @@ img {
 .informations {
   display:flex;
   justify-content: space-evenly;
+}
+
+
+#modif{
+  background-color: #0A369D !important;
+  color:white !important;
+  margin-right: 10px;
+  border-radius: 18px; !important;
+}
+
+#suppr{
+  background-color: red !important;
+  color:white !important;
+  border-radius: 18px; !important;
+  border-color: red;
+}
+
+#buttons{
+  align-self: flex-start;
+  margin-left: auto;
+  margin-top: 5%;
 }

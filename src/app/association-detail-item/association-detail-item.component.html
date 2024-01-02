@@ -1,7 +1,12 @@
 <app-nav></app-nav>
-<div *ngIf="association">
+<div *ngIf="association" id = "centered-div">
+  <div id = "buttons">
+    <button  class="btn btn-primary"  id = "modif" [routerLink]="['/modifier-association', association.id]" routerLinkActive = "active">Modifier</button>
+    <button  class="btn btn-primary"  id = "suppr" [routerLink]="['/associations']" routerLinkActive = "active">Supprimer</button>
+  </div>
   <h2>{{association.name |uppercase}}</h2><br>
   <p>{{association.description}}</p>
+  <h3>Informations</h3>
   <div class = "informations">
     <div class = "info">
       <img src = "assets/images/Minutes.svg">
@@ -20,9 +25,6 @@
           <p>{{member.firstname}} {{member.lastname | uppercase}}</p>
         </li>
       </ul>
-    </div>
-    <div class = "buttons">
-      <button  class="btn btn-primary"  id = "modif" [routerLink]="['/modifier-association', association.id]" routerLinkActive = "active">Modifier l'association</button>
     </div>
     <!--<div class = "info">
       <h5>Rôle</h5>
