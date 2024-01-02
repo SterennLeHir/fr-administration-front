@@ -14,3 +14,15 @@
 h2{
   margin-bottom: 50px;
 }
+
+#creer{
+  background-color: #0A369D ;!important
+  color:white ;!important
+  border-radius: 18px; !important
+}
+
+#buttons{
+  align-self: flex-start;
+  margin-left: auto;
+  margin-top: 5%;
+}

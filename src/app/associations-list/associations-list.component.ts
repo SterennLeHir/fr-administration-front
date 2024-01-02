@@ -7,6 +7,7 @@ import {FooterComponent} from "../footer/footer.component";
 import {NgForOf} from "@angular/common";
 import {UserItemComponent} from "../user-item/user-item.component";
 import {AssociationItemComponent} from "../association-item/association-item.component";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'app-associations-list',
@@ -17,7 +18,9 @@ import {AssociationItemComponent} from "../association-item/association-item.com
     FooterComponent,
     NgForOf,
     UserItemComponent,
-    AssociationItemComponent
+    AssociationItemComponent,
+    RouterLinkActive,
+    RouterLink
   ],
   templateUrl: './associations-list.component.html',
   styleUrl: './associations-list.component.css'
