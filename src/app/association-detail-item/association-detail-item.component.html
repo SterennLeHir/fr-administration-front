@@ -26,6 +26,8 @@
         </li>
       </ul>
     </div>
+
+
     <!--<div class = "info">
       <h5>Rôle</h5>
       <ul class = "list">
@@ -35,6 +37,20 @@
       </ul>
     </div>-->
   </div>
+  <h3>Liste des membres</h3>
+  <table>
+    <tbody>
+    <tr *ngFor="let member of members">
+      <td>{{ member.firstname + ' ' + (member.lastname|uppercase)}}</td>
+      <td>{{ 'role' }}</td>
+      <td>{{ member.age + ' ans'}}</td>
+      <td class="button-cell">
+        <button class="btn btn-primary"  id = "consult" [routerLink]="['/users', member.id]" routerLinkActive = "active">Consulter</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
 </div>
 <app-footer></app-footer>
 

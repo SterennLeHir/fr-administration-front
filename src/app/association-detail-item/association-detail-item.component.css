@@ -47,6 +47,12 @@ img {
   border-color: red;
 }
 
+#consult{
+  background-color: #0A369D !important;
+  color:white !important;
+  border-radius: 18px; !important;
+}
+
 #buttons{
   align-self: flex-start;
   margin-left: auto;
