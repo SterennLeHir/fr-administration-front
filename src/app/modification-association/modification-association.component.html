@@ -26,11 +26,12 @@
           </ul>
         </div>
         <div>
-        <select (change)="addMember($event)">
-          <option *ngFor="let user of users" [value]= user>
+        <select [(ngModel)]="selectedUser">
+          <option *ngFor="let user of users" [ngValue]= user>
             {{ user.firstname + " "}}{{user.lastname | uppercase}}
           </option>
         </select>
+          <button (click)="addMember()" class="btn btn-primary">Ajouter</button>
         </div>
       </div>
     </div>
