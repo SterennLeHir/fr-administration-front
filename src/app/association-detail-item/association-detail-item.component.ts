@@ -6,6 +6,8 @@ import {ActivatedRoute, RouterLink, RouterLinkActive} from "@angular/router";
 import {ApiHelperService} from "../services/api-helper.service";
 import {Association} from "../user-detail-item/user-detail-item.component";
 import {User} from "../users-list/users-list.component";
+import {lastValueFrom, Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 export class Minute {
   constructor(
@@ -32,17 +34,19 @@ export class Minute {
   styleUrl: './association-detail-item.component.css'
 })
 export class AssociationDetailItemComponent implements OnInit{
-  constructor(private route: ActivatedRoute, private api: ApiHelperService) {
+  constructor(private route: ActivatedRoute, private api: ApiHelperService, private http:HttpClient) {
   }
   ngOnInit(): void {
     this.route.paramMap
       .subscribe(res => {
         const id = res.get("id");
         if (id != null) {
-          this.api.get({endpoint : '/associations/'+id}).then(response => {
+          const userRequest: Observable<any> = this.http.get('http://localhost:3000/associations/'+id, { observe: 'response' });
+          lastValueFrom(userRequest).then(response => this.association = response.body);
+          /*this.api.get({endpoint : '/associations/'+id}).then(response => {
             console.log(response);
             this.association = response;
-          });
+          });*/
           this.api.get({endpoint : '/associations/' + id + '/members'}).then(response => {
             this.members = response;
           });

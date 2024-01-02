@@ -26,12 +26,15 @@ export class TokenHttpInterceptor implements HttpInterceptor {
     const token = this.service.getToken();
     // s'il n'est pas initialisé, on envoie la requête telle qu'elle est
     if (!token) {
+      console.log("le token n'est pas initialisé");
       return next.handle(request);
     }
     // Si non, on va injecter le token dedans :
+    console.log("On passe dans intercept");
     const updatedRequest = request.clone({
       headers: request.headers.set('Authorization', `Bearer ${token}`),
     });
+    console.log(updatedRequest);
     // et envoyer la requête avec le token
     return next.handle(updatedRequest).pipe(
       tap( {
@@ -40,6 +43,7 @@ export class TokenHttpInterceptor implements HttpInterceptor {
           if(error instanceof HttpErrorResponse){
             if (error.status === 401){
               //Redirection pour que l'utilisateur se reconnecte
+              this.service.clear();
               this.router.navigateByUrl('/login');
             }
           }
