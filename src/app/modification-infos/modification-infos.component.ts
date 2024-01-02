@@ -1,9 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ApiHelperService} from "../services/api-helper.service";
 import {TokenStorageService} from "../services/token-storage.service";
 import {Router} from "@angular/router";
-import {lastValueFrom, Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
 import {NavComponent} from "../nav/nav.component";
 import {FooterComponent} from "../footer/footer.component";
 
