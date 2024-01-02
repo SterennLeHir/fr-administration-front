@@ -21,7 +21,7 @@ export const routes: Routes = [
   {path: 'account', component:AccountComponent, canActivate:[authGuard]},
   {path: 'users/:id', component:UserDetailItemComponent, canActivate:[authGuard]},
   {path: 'associations/:id', component:AssociationDetailItemComponent, canActivate:[authGuard]},
-  {path: 'associations/:id/minutes/:idMinute', component: Minute, canActivate: [authGuard]},
+  {path: 'minute/:id', component: Minute, canActivate: [authGuard]},
   {path: 'modifier-mes-informations', component:ModificationInfosComponent, canActivate:[authGuard]},
   {path: 'modifier-association/:id', component:ModificationAssociationComponent, canActivate:[authGuard]},
   {path: 'modifier-mot-de-passe', component:ModificationPasswordComponent, canActivate:[authGuard]},

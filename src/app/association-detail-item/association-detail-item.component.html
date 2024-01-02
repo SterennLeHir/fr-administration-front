@@ -13,7 +13,7 @@
       <h5> Comptes rendus </h5>
       <ul class = "list">
         <li *ngFor = "let minute of minutes">
-          <a [routerLink]="['minutes', minute.id]">{{minute.date}}</a>
+          <a [routerLink]="['/minute', minute.id]" routerLinkActive = "active">{{minute.date}}</a>
         </li>
       </ul>
     </div>
@@ -26,16 +26,6 @@
         </li>
       </ul>
     </div>
-
-
-    <!--<div class = "info">
-      <h5>Rôle</h5>
-      <ul class = "list">
-        <li *ngFor = "let role of roles">
-          <p>{{role}}</p>
-        </li>
-      </ul>
-    </div>-->
   </div>
   <h3>Liste des membres</h3>
   <table>
