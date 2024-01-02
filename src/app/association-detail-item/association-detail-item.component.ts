@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FooterComponent} from "../footer/footer.component";
 import {NavComponent} from "../nav/nav.component";
 import {NgForOf, NgIf, UpperCasePipe} from "@angular/common";
-import {ActivatedRoute, RouterLink, RouterLinkActive} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {ApiHelperService} from "../services/api-helper.service";
 import {Association} from "../user-detail-item/user-detail-item.component";
 import {User} from "../users-list/users-list.component";
@@ -34,7 +34,11 @@ export class Minute {
   styleUrl: './association-detail-item.component.css'
 })
 export class AssociationDetailItemComponent implements OnInit{
-  constructor(private route: ActivatedRoute, private api: ApiHelperService, private http:HttpClient) {
+  constructor(private route: ActivatedRoute,
+              private api: ApiHelperService,
+              private http:HttpClient,
+  private router: Router
+) {
   }
   ngOnInit(): void {
     this.route.paramMap
@@ -75,6 +79,14 @@ export class AssociationDetailItemComponent implements OnInit{
   nbMembers !: number;
   id !: string | null;
   roles= new Map();
+
+  delete():void{
+    console.log('ON DELETE')
+    this.api.delete({ endpoint: '/associations/'+ this.id,
+      data: { id: this.id}}).then(response => {
+      this.router.navigateByUrl('/associations');
+    })
+  }
 }
 
 export class Role {

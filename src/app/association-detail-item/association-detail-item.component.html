@@ -2,7 +2,7 @@
 <div *ngIf="association" id = "centered-div">
   <div id = "buttons">
     <button  class="btn btn-primary"  id = "modif" [routerLink]="['/modifier-association', association.id]" routerLinkActive = "active">Modifier</button>
-    <button  class="btn btn-primary"  id = "suppr" [routerLink]="['/associations']" routerLinkActive = "active">Supprimer</button>
+    <button  class="btn btn-primary"  id = "suppr" (click)="delete()">Supprimer</button>
   </div>
   <h2>{{association.name |uppercase}}</h2><br>
   <p>{{association.description}}</p>
