@@ -30,6 +30,7 @@ export class AssociationsListComponent {
 
   ngOnInit(): void {
     const request: Observable<any> = this.http.get('http://localhost:3000/associations', { observe: 'response' });
+    console.log(lastValueFrom(request));
     lastValueFrom(request).then(response => this.dataSource = response.body);
   }
   dataSource= [];

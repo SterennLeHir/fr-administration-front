@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableModule} from "@angular/material/table";
 import {CommonModule} from "@angular/common";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {lastValueFrom, Observable} from "rxjs";
 import {NavComponent} from "../nav/nav.component";
 import {FooterComponent} from "../footer/footer.component";
@@ -21,7 +21,7 @@ export class User {
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [CommonModule, MatTableModule, HttpClientModule, NavComponent, FooterComponent, UserItemComponent],
+  imports: [CommonModule, MatTableModule, NavComponent, FooterComponent, UserItemComponent],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.css'
 })

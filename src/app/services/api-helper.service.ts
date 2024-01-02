@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable, lastValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import {TokenStorageService} from "./token-storage.service";
 
 const base_url: string = 'http://localhost:3000';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ApiHelperService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private token: TokenStorageService) { }
 
   // @ts-ignore
   public get({
@@ -72,20 +73,23 @@ export class ApiHelperService {
 
     const url = base_url + endpoint;
 
+    const token = this.token.getToken();
+    //const header = new Headers('Authorization : Bearer ${token}');
     const requestOptions = {
-      params: queryParams,
+      params: queryParams
     };
-
+    console.log("La requête");
     console.log(method, url, JSON.stringify(requestOptions), JSON.stringify(data));
 
     let req: Observable<any>;
     if (methodWanted === 'get') {
-      req = this.http.get(url, { ...requestOptions, observe: 'response'});
+      req = this.http.get(url, { ...requestOptions,  observe: 'response'}, );
     } else if (methodWanted === 'post') {
       req = this.http.post(url, data, {
         ...requestOptions,
         observe: 'response',
       });
+
     } else if (methodWanted === 'put') {
       req = this.http.put(url, data, {
         ...requestOptions,

@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import {ApiHelperService} from "../services/api-helper.service";
-import {HttpClientModule} from "@angular/common/http";
 import {TokenStorageService} from "../services/token-storage.service";
 import {Router, RouterLink, RouterLinkActive} from "@angular/router";
-import {User} from "../users-list/users-list.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [HttpClientModule, RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

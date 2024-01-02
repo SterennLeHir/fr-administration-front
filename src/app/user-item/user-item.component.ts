@@ -1,9 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {MatCardModule} from "@angular/material/card";
-import {User} from "../users-list/users-list.component";
-import {lastValueFrom, Observable} from "rxjs";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
