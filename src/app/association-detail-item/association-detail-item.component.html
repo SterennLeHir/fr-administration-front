@@ -18,13 +18,9 @@
       </ul>
     </div>
     <div class = "info">
-      <img src = "assets/images/Utilisateur.png">
+      <img src = "assets/images/Membres.svg">
       <h5>Membres</h5>
-      <ul class = "list">
-        <li *ngFor = "let member of members">
-          <p>{{member.firstname}} {{member.lastname | uppercase}}</p>
-        </li>
-      </ul>
+      <p> {{nbMembers}}</p>
     </div>
   </div>
   <h3>Liste des membres</h3>
@@ -32,12 +28,13 @@
     <tbody>
     <tr *ngFor="let member of members">
       <td class = "closer-cells">{{ member.firstname + ' ' + (member.lastname|uppercase)}}</td>
-      <td class = "closer-cells">{{ 'role' }}</td>
+      <td class = "closer-cells">{{getRole(member)}}</td>
       <td class = "closer-cells">{{ member.age + ' ans'}}</td>
       <td class="button-cell">
         <button class="btn btn-primary"  id = "consult" [routerLink]="['/users', member.id]" routerLinkActive = "active">Consulter</button>
       </td>
     </tr>
+    <hr id = "line">
     </tbody>
   </table>
 

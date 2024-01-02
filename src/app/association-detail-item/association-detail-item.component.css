@@ -34,23 +34,23 @@ img {
 
 
 #modif{
-  background-color: #0A369D !important;
-  color:white !important;
+  background-color: #0A369D;
+  color:white;
   margin-right: 10px;
-  border-radius: 18px; !important;
+  border-radius: 18px;
 }
 
 #suppr{
-  background-color: red !important;
-  color:white !important;
-  border-radius: 18px; !important;
+  background-color: red ;
+  color:white ;
+  border-radius: 18px;
   border-color: red;
 }
 
 #consult{
-  background-color: #0A369D !important;
-  color:white !important;
-  border-radius: 18px; !important;
+  background-color: #0A369D ;!important
+  color:white ;!important
+  border-radius: 18px; !important
 }
 
 #buttons{
