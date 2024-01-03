@@ -30,7 +30,6 @@ export class TokenHttpInterceptor implements HttpInterceptor {
       return next.handle(request);
     }
     // Si non, on va injecter le token dedans :
-    console.log("On passe dans intercept");
     const updatedRequest = request.clone({
       headers: request.headers.set('Authorization', `Bearer ${token}`),
     });

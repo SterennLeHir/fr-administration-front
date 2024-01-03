@@ -7,8 +7,10 @@ import {NavComponent} from "../nav/nav.component";
 import {FooterComponent} from "../footer/footer.component";
 import {UserItemComponent} from "../user-item/user-item.component";
 import {RouterLinkActive} from "@angular/router";
+import {RoleValue} from "../modification-membres/role.enum";
 
 export class User {
+  role !: RoleValue
   constructor(
     public id: number,
     public password: string,
