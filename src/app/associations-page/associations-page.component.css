@@ -10,7 +10,9 @@
   align-self: center;
   min-width: 80%;
 }
-
+html {
+  width:100%;
+}
 h2{
   margin-bottom: 50px;
 }

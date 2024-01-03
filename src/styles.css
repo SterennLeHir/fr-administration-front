@@ -42,6 +42,7 @@ button {
   border-color: #0A369D !important;
   font-family: Inter, sans-serif;
   font-size: 25px;
+  border-radius: 18px !important;
 }
 
 a {

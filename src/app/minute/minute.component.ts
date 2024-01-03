@@ -6,6 +6,7 @@ import {FooterComponent} from "../footer/footer.component";
 import {NavComponent} from "../nav/nav.component";
 import {NgForOf, NgIf, UpperCasePipe} from "@angular/common";
 import {User} from "../users-page/users-page.component";
+import {UsersListComponent} from "../users-list/users-list.component";
 
 @Component({
   selector: 'app-minute',
@@ -15,7 +16,8 @@ import {User} from "../users-page/users-page.component";
     NavComponent,
     NgForOf,
     NgIf,
-    UpperCasePipe
+    UpperCasePipe,
+    UsersListComponent
   ],
   templateUrl: './minute.component.html',
   styleUrl: './minute.component.css'
@@ -33,11 +35,12 @@ export class MinuteComponent implements OnInit {
             console.log(response);
             this.minute = response;
             this.voters = this.minute.voters;
+            this.idAssociation = response.association.id ;
           });
         }
       })
     }
-
+  idAssociation !: any;
   minute !: Minute
   voters!: User[]
 }

@@ -1,17 +1,12 @@
 <app-nav></app-nav>
 <div *ngIf="minute">
   <h2>COMPTE RENDU DU {{minute.date}}</h2><br>
-  <h5>Contenu</h5>
+  <h3>Contenu</h3>
   <p>{{minute.content}}</p>
   <div class = "informations">
     <div class = "info">
-      <img src = "assets/images/Membres.svg">
-      <h5> Votants </h5>
-      <ul class = "list">
-        <li *ngFor = "let voter of voters">
-          <p>{{voter.firstname}} {{voter.lastname | uppercase}} </p>
-        </li>
-      </ul>
+      <h3> Liste des participants </h3>
+      <app-users-list [members] = "voters" [id] = "idAssociation"></app-users-list>
     </div>
   </div>
 </div>

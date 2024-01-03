@@ -8,6 +8,7 @@ import {Association} from "../user-detail-item/user-detail-item.component";
 import {User} from "../users-page/users-page.component";
 import {lastValueFrom, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {UsersListComponent} from "../users-list/users-list.component";
 
 export class Minute {
   constructor(
@@ -28,7 +29,8 @@ export class Minute {
     NgIf,
     UpperCasePipe,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    UsersListComponent
   ],
   templateUrl: './association-detail-item.component.html',
   styleUrl: './association-detail-item.component.css'
@@ -54,12 +56,6 @@ export class AssociationDetailItemComponent implements OnInit{
           this.api.get({endpoint : '/associations/' + this.id + '/members'}).then(response => {
             this.members = response;
             this.nbMembers = this.members.length;
-            for (const member of this.members) {
-              this.api.get({endpoint : '/roles/' + member.id + '/' + this.id}).then(response => {
-                console.log(response.name);
-                this.roles.set(member, response.name);
-              });
-            }
           });
           this.api.get({endpoint : '/minutes/association/' + this.id}).then(response => {
             this.minutes = response;
@@ -69,16 +65,14 @@ export class AssociationDetailItemComponent implements OnInit{
       })
   }
 
-  getRole(member:User) {
-    return this.roles.get(member);
-  }
+
   association!:Association;
   members: User[] = [];
   minutes: Minute[] = [];
   nbMinutes !: number;
   nbMembers !: number;
   id !: string | null;
-  roles= new Map();
+
 
   delete():void{
     console.log('ON DELETE')
@@ -89,10 +83,3 @@ export class AssociationDetailItemComponent implements OnInit{
   }
 }
 
-export class Role {
-  id !: number;
-  association !: Association;
-  user !: User;
-  name !: string;
-
-}

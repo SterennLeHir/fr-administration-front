@@ -1,12 +1,40 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {User} from "../users-page/users-page.component";
+import {NgForOf, UpperCasePipe} from "@angular/common";
+import {RouterLink, RouterLinkActive} from "@angular/router";
+import {ApiHelperService} from "../services/api-helper.service";
 
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [],
+  imports: [
+    NgForOf,
+    RouterLinkActive,
+    UpperCasePipe,
+    RouterLink
+  ],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.css'
 })
-export class UsersListComponent {
+export class UsersListComponent implements OnInit {
 
+  constructor(private api: ApiHelperService) {}
+
+  @Input() members !: User[]
+  @Input() id !: any;
+  roles = new Map();
+
+  ngOnInit(): void {
+    for (const member of this.members) {
+        this.api.get({endpoint : '/roles/' + member.id + '/' + this.id}).then(response => {
+          console.log(response.name);
+          this.roles.set(member, response.name);
+        });
+    }
+  }
+
+
+  getRole(member: User) {
+    return this.roles.get(member);
+  }
 }
