@@ -5,7 +5,7 @@ import {Minute} from "../association-detail-item/association-detail-item.compone
 import {FooterComponent} from "../footer/footer.component";
 import {NavComponent} from "../nav/nav.component";
 import {NgForOf, NgIf, UpperCasePipe} from "@angular/common";
-import {User} from "../users-list/users-list.component";
+import {User} from "../users-page/users-page.component";
 
 @Component({
   selector: 'app-minute',

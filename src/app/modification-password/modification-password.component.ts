@@ -4,7 +4,7 @@ import {NavComponent} from "../nav/nav.component";
 import {ApiHelperService} from "../services/api-helper.service";
 import {Router} from "@angular/router";
 import {TokenStorageService} from "../services/token-storage.service";
-import {User} from "../users-list/users-list.component";
+import {User} from "../users-page/users-page.component";
 
 @Component({
   selector: 'app-modification-password',

@@ -5,7 +5,7 @@ import {NgForOf, NgIf, UpperCasePipe} from "@angular/common";
 import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {ApiHelperService} from "../services/api-helper.service";
 import {Association} from "../user-detail-item/user-detail-item.component";
-import {User} from "../users-list/users-list.component";
+import {User} from "../users-page/users-page.component";
 import {lastValueFrom, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 

@@ -4,7 +4,7 @@ import {FooterComponent} from "../footer/footer.component";
 import {ApiHelperService} from "../services/api-helper.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {TokenStorageService} from "../services/token-storage.service";
-import {User} from "../users-list/users-list.component";
+import {User} from "../users-page/users-page.component";
 import {NgForOf, UpperCasePipe} from "@angular/common";
 import {MatIconModule} from "@angular/material/icon";
 import {lastValueFrom, Observable} from "rxjs";

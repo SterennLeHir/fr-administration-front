@@ -4,7 +4,7 @@ import {FooterComponent} from "../footer/footer.component";
 import {MatIconModule} from "@angular/material/icon";
 import {NgForOf, UpperCasePipe} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {User} from "../users-list/users-list.component";
+import {User} from "../users-page/users-page.component";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {ApiHelperService} from "../services/api-helper.service";

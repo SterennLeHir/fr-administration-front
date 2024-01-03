@@ -8,10 +8,9 @@ import {NgForOf, NgIf} from "@angular/common";
 import {UserItemComponent} from "../user-item/user-item.component";
 import {AssociationItemComponent} from "../association-item/association-item.component";
 import {RouterLink, RouterLinkActive} from "@angular/router";
-import {ApiHelperService} from "../services/api-helper.service";
 
 @Component({
-  selector: 'app-associations-list',
+  selector: 'app-associations-page',
   standalone: true,
   imports: [
     NavComponent,
@@ -24,10 +23,10 @@ import {ApiHelperService} from "../services/api-helper.service";
     RouterLink,
     NgIf
   ],
-  templateUrl: './associations-list.component.html',
-  styleUrl: './associations-list.component.css'
+  templateUrl: './associations-page.component.html',
+  styleUrl: './associations-page.component.css'
 })
-export class AssociationsListComponent implements OnInit {
+export class AssociationsPageComponent implements OnInit {
 
   constructor(
     private http: HttpClient
@@ -46,6 +45,7 @@ export class AssociationsListComponent implements OnInit {
     if (searchTerm === "") {
       const request: Observable<any> = this.http.get('http://localhost:3000/associations/', {observe: 'response'});
       lastValueFrom(request).then(response => this.dataSource = response.body);
+      this.message = "";
     } else if (e.key === 'Enter') {
       // La touche Entrée a été enfoncée
       // Récupérer la valeur de la barre de recherche
@@ -55,6 +55,7 @@ export class AssociationsListComponent implements OnInit {
       lastValueFrom(request).then(response => {
         console.log("pas d'erreur");
         this.dataSource.push(response.body);
+        this.message = "";
       })
         .catch(e => this.message = "Aucune association avec cet id");
       }
