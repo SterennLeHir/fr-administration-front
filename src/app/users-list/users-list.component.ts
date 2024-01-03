@@ -31,7 +31,7 @@ export class UsersListComponent implements OnInit {
     private http: HttpClient
   ) {}
 
-
+  message !: string;
   dataSource: User[]= [];
   ngOnInit(): void {
     const userRequest: Observable<any> = this.http.get('http://localhost:3000/users', { observe: 'response' });
@@ -49,8 +49,11 @@ export class UsersListComponent implements OnInit {
       const searchTerm = (e.target as HTMLInputElement).value;
       this.dataSource = [];
       const request: Observable<any> = this.http.get('http://localhost:3000/users/' + searchTerm, {observe: 'response'});
-      lastValueFrom(request).then(response => this.dataSource.push(response.body));
+      lastValueFrom(request).then(response => {
+        console.log("pas d'erreur");
+        this.dataSource.push(response.body);
+      })
+        .catch(e => this.message = "Aucun utilisateur avec cet id");
     }
   }
-
 }

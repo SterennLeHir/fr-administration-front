@@ -37,3 +37,7 @@ input {
   background-repeat: no-repeat;
   background-position: right;
 }
+
+#error {
+  color: red;
+}

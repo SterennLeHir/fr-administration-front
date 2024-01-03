@@ -3,6 +3,9 @@
   <h2>LES UTILISATEURS</h2>
   <p>Ici vous trouverez la liste complète des membres des différentes associations. Vous pouvez également en chercher un en particulier !</p>
   <input type = "search" (keydown)="search($event)" placeholder="Je cherche un utilisateur">
+  <div *ngIf="message">
+    <p id="error">{{message}}</p>
+  </div>
   <ul class = "list">
     <li *ngFor = "let user of dataSource">
       <app-user-item [myData] = "user"></app-user-item>

@@ -7,6 +7,9 @@
     <a class="btn btn-primary"  id = "creer" [routerLink]="['/creer-association']" routerLinkActive = "active">Ajouter une Association</a>
     <input type = "search" (keydown)="search($event)" placeholder="Je cherche une association">
   </div>
+  <div *ngIf="message">
+    <p id="error">{{message}}</p>
+  </div>
   <ul class = "list">
     <li *ngFor = "let asso of dataSource">
       <app-association-item [myData] = "asso"></app-association-item>
