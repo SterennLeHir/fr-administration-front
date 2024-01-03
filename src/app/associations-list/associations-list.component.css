@@ -15,14 +15,22 @@ h2{
   margin-bottom: 50px;
 }
 
-#creer{
-  background-color: #0A369D ;!important
-  color:white ;!important
-  border-radius: 18px; !important
+#creer {
+  background-color: #0A369D ;
+  color:white ;
+  border-radius: 18px;
 }
 
 #buttons{
+  display: flex;
+  justify-content: space-between;
   align-self: flex-start;
   margin-left: auto;
   margin-top: 5%;
+  margin-bottom: 50px;
+}
+
+input {
+  border-radius: 18px;
+  width: 20%;
 }
