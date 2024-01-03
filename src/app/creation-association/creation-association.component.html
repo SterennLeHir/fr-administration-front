@@ -12,27 +12,6 @@
           <label for="description">Description</label>
           <textarea id = "description" class="form-control" rows="3" placeholder="blablabla"></textarea>
         </div>
-        <div class = "info">
-          <img src = "assets/images/Utilisateur.png">
-          <h5>Membres</h5>
-          <ul class = "list">
-            <li *ngFor = "let member of members">
-              <!--<p>{{member.firstname}} {{member.lastname | uppercase}}</p> -->
-              {{ member.firstname + " "}}{{member.lastname | uppercase}}
-              <span class="delete-icon" (click)="deleteMember(member)"> <!-- Ajoutez ici la méthode de suppression -->
-                <mat-icon>delete</mat-icon>
-              </span>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <select [(ngModel)]="selectedUser">
-            <option *ngFor="let user of users" [ngValue]= user>
-              {{ user.firstname + " "}}{{user.lastname | uppercase}}
-            </option>
-          </select>
-          <button (click)="addMember()" class="btn btn-primary">Ajouter</button>
-        </div>
       </div>
     </div>
   </div>
