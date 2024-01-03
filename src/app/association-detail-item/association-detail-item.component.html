@@ -25,6 +25,7 @@
   </div>
   <h3>Liste des membres</h3>
   <app-users-list [members]="members" [id]="id"></app-users-list>
+  <button  class="btn btn-primary"  id = "modif-membres" [routerLink]="['/modifier-membres', association.id]" routerLinkActive = "active">Modifier les membres</button>
 </div>
 <app-footer></app-footer>
 

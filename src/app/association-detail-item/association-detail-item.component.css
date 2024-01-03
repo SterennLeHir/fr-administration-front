@@ -35,7 +35,7 @@ img {
 }
 
 
-#modif{
+#modif {
   background-color: #0A369D;
   color:white;
   margin-right: 10px;
@@ -49,6 +49,7 @@ img {
   border-color: red !important;
 }
 
+
 #consult{
   background-color: #0A369D ;!important
   color:white !important ;
@@ -59,5 +60,12 @@ img {
   align-self: flex-start;
   margin-left: auto;
   margin-top: 5%;
+}
+
+#modif-membres {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 200px;
+  align-self: center;
 }
 

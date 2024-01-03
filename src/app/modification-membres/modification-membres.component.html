@@ -1,0 +1,33 @@
+<app-nav></app-nav>
+<div class = "main">
+  <div class = "wrapper">
+    <h2>MODIFIER LES MEMBRES</h2>
+    <div id="form">
+        <div class = "info">
+          <img src = "assets/images/Utilisateur.png">
+          <h5>Membres</h5>
+          <ul class = "list">
+            <li *ngFor = "let member of members">
+              {{ member.firstname + " "}}{{member.lastname | uppercase}}
+              <span class="delete-icon" (click)="deleteMember(member)">
+                <mat-icon>delete</mat-icon>
+              </span>
+
+            </li>
+          </ul>
+        </div>
+        <div>
+          <select [(ngModel)]="selectedUser">
+            <option *ngFor="let user of users" [ngValue]= user>
+              {{ user.firstname + " "}}{{user.lastname | uppercase}}
+            </option>
+          </select>
+          <button (click)="addMember()" class="btn btn-primary">Ajouter</button>
+        </div>
+      </div>
+    </div>
+  <div class="row justify-content-center mt-4">
+    <button (click)="validate()" class="btn btn-primary">Confirmer</button>
+  </div>
+  </div>
+<app-footer></app-footer>

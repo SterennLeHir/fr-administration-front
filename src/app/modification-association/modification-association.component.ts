@@ -31,13 +31,11 @@ export class ModificationAssociationComponent implements OnInit{
   private assocId!:number;
   public members! : User[]
   public users! : User[]
-  public selectedUser! :User
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
     private api: ApiHelperService,
-    private router: Router,
-    private token: TokenStorageService
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -59,34 +57,14 @@ export class ModificationAssociationComponent implements OnInit{
   }
 
   validate(): void {
-    console.log('ON VALIDE')
+    console.log('ON VALIDE');
     const nom: string = (document.getElementById('nom') as HTMLInputElement).value;
     const description: string = (document.getElementById('description') as HTMLInputElement).value;
-    const membersId: number[] = this.membersToId()
     this.api.put({ endpoint: '/associations/'+ this.assocId,
-      data: { name: nom, idUsers: membersId, description: description}}).then(response => {
+      data: { name: nom, description: description}}).then(response => {
       this.router.navigateByUrl('/associations/'+this.assocId);
     })
   };
-
-  deleteMember(user:User): void{
-    const i = this.members.indexOf(user)
-    this.members.splice(i, 1)
-    console.log("Deleting member:", user)
-    console.log("MEMBERS" + JSON.stringify(this.members))
-  }
-
-  addMember(): void{
-    if((this.members.findIndex(member => this.selectedUser.id === member.id) === -1)){ //on ne add que si le user selected n'est pas déjà membre
-      this.members.push(this.selectedUser)
-      console.log('Adding member:', this.selectedUser);
-      console.log("MEMBERS" + JSON.stringify(this.members))
-    }
-  }
-
-  private membersToId(): number[]{
-    return this.members.map(member => member.id)
-  }
 
   protected readonly JSON = JSON;
 }
