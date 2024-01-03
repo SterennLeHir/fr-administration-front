@@ -1,9 +1,7 @@
 <app-nav></app-nav>
 <div class = "container" *ngIf="user">
-  <div class = "header">
-    <h2>MON COMPTE</h2>
-    <a  class="btn btn-primary" id = "delete btn" (click)="delete()" routerLinkActive = "active">Supprimer mon compte</a>
-  </div>
+  <a  class="btn btn-primary" id = "delete btn" (click)="delete()">Supprimer mon compte</a>
+  <h2>MON COMPTE</h2>
   <h3>Informations</h3>
   <div class = "informations">
     <div class = "detail-info">

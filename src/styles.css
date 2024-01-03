@@ -5,7 +5,10 @@ body {
   margin: 0;
   width:auto;
   font-family: Inter, sans-serif !important;
-  overflow-x: hidden; /*pas d'overflow sur l'axe x*/
+  overflow-x: hidden !important; /* pas d'overflow sur l'axe x*/
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 h1, h2, h3, p {
@@ -33,7 +36,22 @@ h3 {
 
 button {
   background-color: #0A369D !important;
-  color:white !important;
+  color:white;
+  height: 35px !important;
+  width: auto;
+  border-color: #0A369D !important;
+  font-family: Inter, sans-serif;
+  font-size: 25px;
 }
 
+a {
+  color:#0A369D;
+  height: 35px;
+  width: auto;
+  text-decoration: none !important;
+  font-family: Inter, sans-serif;
+}
 
+app-root {
+  flex: 1 !important;
+}
