@@ -11,7 +11,7 @@ body {
   flex-direction: column !important;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, h4, h5, p {
   color: #0A369D;
   text-align:center;
   font-family: Inter, sans-serif !important;
@@ -31,6 +31,16 @@ h2 {
 
 h3 {
   font-size: 35px !important;
+  font-weight: bold !important;
+}
+
+h4{
+  font-size: 28px !important;
+  font-weight: bold !important;
+}
+
+h5{
+  font-size: 20px !important;
   font-weight: bold !important;
 }
 
