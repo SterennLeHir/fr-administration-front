@@ -10,7 +10,7 @@ import {RouterLinkActive} from "@angular/router";
 import {RoleValue} from "../modification-membres/role.enum";
 
 export class User {
-  role !: RoleValue
+  role !: RoleValue;
   constructor(
     public id: number,
     public password: string,
