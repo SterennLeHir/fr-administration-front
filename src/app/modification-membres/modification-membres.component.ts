@@ -67,7 +67,6 @@ export class ModificationMembresComponent implements OnInit {
       })
   }
   validate(): void {
-    console.log('ON VALIDE');
     // On met à jour les membres
     this.api.put({ endpoint: '/associations/'+ this.assocId,
       data: { idUsers: this.membersToId()}}).then(response => {
@@ -100,27 +99,19 @@ export class ModificationMembresComponent implements OnInit {
   }
 
   deleteMember(user:User): void{
-    console.log("début méthode delete");
-    console.log(`Membres au début de deleteMember : ${JSON.stringify(this.members)}`);
     const i = this.members.indexOf(user); // position du user dans la liste initiale
-    console.log(i);
-    console.log(this.membersToDeleteId);
     if (i !== -1) { // on l'ajoute aux membres à supprimer que s'il appartenait à la liste initiale
       this.membersToDeleteId.push(this.members[i].id);
-      console.log(`Membres après l'ajout dans ceux à supprimer : ${JSON.stringify(this.members)}`);
     }
     // on le supprime de la liste modifiée ou de la liste des nouveaux users
     const i2 = this.newMembers.findIndex(member => user.id === member.id); // position du user dans la liste modifiée
     if (i2 !== -1) { // si c'est un nouveau membre
       this.newMembers.splice(i2, 1);
-      console.log(`Membres après la suppression dans les nouveaux membres : ${JSON.stringify(this.members)}`);
     } else {
       const i3 = this.membersModified.findIndex(member => user.id === member.id); // position du user dans la liste modifiée
       this.membersModified.splice(i3, 1);
-      console.log(`Membres après la suppression dans les membres modifiés: ${JSON.stringify(this.members)}`);
     }
-    console.log("Deleting member:", user);
-    console.log(`Membres à la fin de deleteMember : ${JSON.stringify(this.members)}`);
+    console.log("Deleting member:", JSON.stringify(user));
   }
 
   addMember(): void{
@@ -128,34 +119,24 @@ export class ModificationMembresComponent implements OnInit {
     if(idInModifiedList === -1){ // on n'ajoute le userSelected que s'il n'est pas déjà membre (liste modifiée)
       this.selectedUser.role = RoleValue.M; // Valeur par défaut
       if (this.membersToDeleteId.indexOf(this.selectedUser.id) !== -1) {// l'utilisateur a été supprimé sans valider
-        console.log("Il a déjà été supprimé");
         // On l'enlève des utilisateurs à supprimer
         const indexToDelete = this.membersToDeleteId.indexOf(this.selectedUser.id);
         this.membersToDeleteId.splice(indexToDelete, 1);
-        console.log("enlevé de la liste à supprimer", this.membersToDeleteId)
       }
       // on regarde si c'est un nouveau membre ou un présent dans la liste initiale
       const idInInitialList= this.members.findIndex(member => this.selectedUser.id === member.id);
-      console.log(`indice dans liste initiale ${idInInitialList}`);
-      console.log(`indice dans liste modifiée ${idInModifiedList}`);
       if(idInInitialList !== -1) { // si c'est un ancien membre on modifie son role
-        console.log("Ce n'est pas un nouveau membre");
-        console.log(`L'ancienne liste était ${JSON.stringify(this.membersModified)}`);
         this.membersModified.push(this.selectedUser);
-        console.log(`La nouvelle liste est ${JSON.stringify(this.membersModified)}`);
       } else { // si c'est un nouveau membre on l'ajoute à la liste des nouveaux membres
         this.newMembers.push(this.selectedUser);
       }
-
-      console.log('Adding member:', this.selectedUser);
+      console.log('Adding member:', JSON.stringify(this.selectedUser));
 
     }
   }
   private membersToId(): number[]{
-    this.members = this.members.concat(this.newMembers);
-    console.log("voilà la liste des membres à update");
-    console.log(JSON.stringify(this.members));
-    return this.members.map(member => member.id);
+    this.membersModified = this.membersModified.concat(this.newMembers);
+    return this.membersModified.map(member => member.id);
   }
   protected readonly RoleValue = RoleValue;
   protected readonly Object = Object;

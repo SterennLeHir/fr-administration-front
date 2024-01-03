@@ -5,7 +5,7 @@
     <div id="form">
         <div class = "info">
           <ul class = "list">
-            <li *ngFor = "let member of members.concat(newMembers)">
+            <li *ngFor = "let member of membersModified.concat(newMembers)">
               <div class= elem>
                 <div class= "nom">
                   <span class="delete-icon" (click)="deleteMember(member)">
