@@ -33,4 +33,7 @@ h2{
 input {
   border-radius: 18px;
   width: 20%;
+  background-image: url("../../assets/images/Search.svg");
+  background-repeat: no-repeat;
+  background-position: right;
 }

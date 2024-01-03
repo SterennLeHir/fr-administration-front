@@ -6,6 +6,7 @@ import {lastValueFrom, Observable} from "rxjs";
 import {NavComponent} from "../nav/nav.component";
 import {FooterComponent} from "../footer/footer.component";
 import {UserItemComponent} from "../user-item/user-item.component";
+import {RouterLinkActive} from "@angular/router";
 
 export class User {
   constructor(
@@ -21,7 +22,7 @@ export class User {
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [CommonModule, MatTableModule, NavComponent, FooterComponent, UserItemComponent],
+  imports: [CommonModule, MatTableModule, NavComponent, FooterComponent, UserItemComponent, RouterLinkActive],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.css'
 })
@@ -30,11 +31,26 @@ export class UsersListComponent implements OnInit {
     private http: HttpClient
   ) {}
 
+
+  dataSource: User[]= [];
   ngOnInit(): void {
     const userRequest: Observable<any> = this.http.get('http://localhost:3000/users', { observe: 'response' });
     lastValueFrom(userRequest).then(response => this.dataSource = response.body);
   }
 
-  dataSource: User[]= [];
+  search(e: KeyboardEvent) {
+    const searchTerm = (e.target as HTMLInputElement).value;
+    if (searchTerm === "") {
+      const request: Observable<any> = this.http.get('http://localhost:3000/users/', {observe: 'response'});
+      lastValueFrom(request).then(response => this.dataSource = response.body);
+    } else if (e.key === 'Enter') {
+      // La touche Entrée a été enfoncée
+      // Récupérer la valeur de la barre de recherche
+      const searchTerm = (e.target as HTMLInputElement).value;
+      this.dataSource = [];
+      const request: Observable<any> = this.http.get('http://localhost:3000/users/' + searchTerm, {observe: 'response'});
+      lastValueFrom(request).then(response => this.dataSource.push(response.body));
+    }
+  }
 
 }
