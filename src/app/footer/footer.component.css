@@ -1,6 +1,6 @@
 footer {
   bottom: 0;
-  position:fixed;
+  position:relative;
   width: 100%;
   background-color: #0A369D;
   text-align: center;
