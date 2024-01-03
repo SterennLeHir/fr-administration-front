@@ -1,6 +1,8 @@
 <app-nav></app-nav>
-<div class = "container" *ngIf="user">
-  <a  class="btn btn-primary" id = "delete btn" (click)="delete()">Supprimer mon compte</a>
+<div id = "centered-div" *ngIf="user">
+  <div id ="button">
+    <a  class="btn btn-primary" id = "delete btn" (click)="delete()">Supprimer mon compte</a>
+  </div>
   <h2>MON COMPTE</h2>
   <h3>Informations</h3>
   <div class = "informations">

@@ -2,17 +2,22 @@ h2, h3, p {
   margin-bottom: 50px;
 }
 
-.container {
-  margin-top: 5%;
+#centered-div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
 .informations {
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
+  margin-right: 5%;
 }
+
 .detail-info {
   text-align: center;
-  align-items: center;
 }
 
 img {
@@ -25,13 +30,19 @@ a {
   border-radius: 18px;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-}
-
 #delete\ btn {
   height: 40px;
   background-color: red;
   border-color: red;
+}
+
+#button{
+  align-self: flex-start;
+  margin-left: auto;
+  margin-top: 5%;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-evenly;
 }
