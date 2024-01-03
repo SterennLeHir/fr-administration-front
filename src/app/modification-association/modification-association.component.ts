@@ -3,14 +3,11 @@ import {NavComponent} from "../nav/nav.component";
 import {FooterComponent} from "../footer/footer.component";
 import {ApiHelperService} from "../services/api-helper.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {TokenStorageService} from "../services/token-storage.service";
-import {User} from "../users-page/users-page.component";
 import {NgForOf, UpperCasePipe} from "@angular/common";
 import {MatIconModule} from "@angular/material/icon";
-import {lastValueFrom, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
-import {response} from "express";
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {lastValueFrom, Observable} from "rxjs";
 
 @Component({
   selector: 'app-modification-association',
@@ -21,7 +18,8 @@ import {response} from "express";
     NgForOf,
     UpperCasePipe,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './modification-association.component.html',
   styleUrl: './modification-association.component.css'
@@ -29,8 +27,6 @@ import {response} from "express";
 
 export class ModificationAssociationComponent implements OnInit{
   private assocId!:number;
-  public members! : User[]
-  public users! : User[]
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
@@ -38,33 +34,29 @@ export class ModificationAssociationComponent implements OnInit{
     private router: Router
   ) {}
 
+  association = new FormGroup({
+    name: new FormControl(''),
+    description: new FormControl(''),
+  });
   ngOnInit(): void {
     this.route.paramMap
       .subscribe(res => {
         const id = res.get("id");
         if (id != null) {
-          this.assocId = +id
-          this.api.get({endpoint : '/associations/' + id + '/members'}).then(response => {
-            this.members = response
-          }).then(response => {
-            const userRequest: Observable<any> = this.http.get('http://localhost:3000/users', { observe: 'response' });
-          lastValueFrom(userRequest).then(response => this.users = response.body);
-          }).then(response=>{
-            console.log("MEMBERS" + JSON.stringify(this.members));
-          })
-          }
+          this.assocId = +id;
+          const userRequest: Observable<any> = this.http.get(`http://localhost:3000/associations/${this.assocId}`, { observe: 'response' });
+          lastValueFrom(userRequest).then( response => {
+            this.association.patchValue(response.body);
+          });
+        }
       })
   }
 
-  validate(): void {
-    console.log('ON VALIDE');
-    const nom: string = (document.getElementById('nom') as HTMLInputElement).value;
-    const description: string = (document.getElementById('description') as HTMLInputElement).value;
-    this.api.put({ endpoint: '/associations/'+ this.assocId,
-      data: { name: nom, description: description}}).then(response => {
-      this.router.navigateByUrl('/associations/'+this.assocId);
+  submit(e: Event): void {
+    e.preventDefault();
+    console.log("submit");
+    this.api.put({ endpoint: `/associations/${this.assocId}`, data: { ...this.association.value}}).then(response => {
+      this.router.navigateByUrl(`/associations/${this.assocId}`);
     })
   };
-
-  protected readonly JSON = JSON;
 }
