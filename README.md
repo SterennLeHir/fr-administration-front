@@ -8,7 +8,7 @@ A la racine du projet, lancez `ng serve --open` pour lancer le serveur Angular. 
 
 ## Prototype
 
-Pour concevoir notre site, nous avons dans un premier temps réalisé une maquette, disponible [ici] (https://www.figma.com/proto/SjSrg8LIlCfCPDhcexwbzI/Maquette-WM?type=design&node-id=53-222&t=UNXyD6K2QHa3EE9E-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=7%3A288).
+Pour concevoir notre site, nous avons dans un premier temps réalisé une maquette, disponible [ici](https://www.figma.com/proto/SjSrg8LIlCfCPDhcexwbzI/Maquette-WM?type=design&node-id=53-222&t=UNXyD6K2QHa3EE9E-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=7%3A288).
 
 ## Structure
 
@@ -27,10 +27,8 @@ Au niveau des fonctionnalités, voici celles que nous avons implémentées :
 - [x] Modifier les informations d'un utilisateur
 - [x] Supprimer un utilisateur
 - [x] Rechercher un utilisateur par son id
-- [ ] Rechercher un utilisateur par son nom
 - [x] Lister les associations
 - [x] Rechercher une association par son id
-- [ ] Rechercher une association par son nom
 - [x] Créer une association
 - [x] Supprimer une association
 - [x] Modifier une association (nom et description)
