@@ -25,12 +25,13 @@ h1 {
   margin-bottom: 50px;
 }
 
-#erreur {
+.erreur {
   display: flex;
   flex-direction : row;
   text-align: center;
 }
-#erreur p{
+
+.erreur{
   color: red;
 }
 
