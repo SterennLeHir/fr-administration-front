@@ -1,27 +1,41 @@
-# FrAdministrationFront
+# Asso' de Rennes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+Ce projet est généré avec [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7. L'objectif est de fournir un site sur lequel sont recensés les associations de Rennes avec leurs membres, ainsi que tous les utilisateurs du site. 
 
-## Development server
+## Execution
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A la racine du projet, lancez `ng serve --open` pour lancer le serveur Angular. Votre navigateur s'ouvrira automatiquement avec l'url indiquée mais si ce n'est pas le cas, naviguez à l'adresse `http://localhost:4200/`. En parallèle, lancez le serveur du back-end [Voir instructions ici](https://github.com/Sterenn35/fr-administration/blob/master/README.md).
 
-## Code scaffolding
+## Prototype
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Pour concevoir notre site, nous avons dans un premier temps réalisé une maquette, disponible [ici] (https://www.figma.com/proto/SjSrg8LIlCfCPDhcexwbzI/Maquette-WM?type=design&node-id=53-222&t=UNXyD6K2QHa3EE9E-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=7%3A288).
 
-## Build
+## Structure
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Les diagrammes ci-dessous représente respectivement les liens entre les pages et les routes possibles de l'application.
+A INSERER. 
+![](images/pages.png)
+![](images/routes.png)
+## Fonctionnalités
 
-## Running unit tests
+Au niveau des fonctionnalités, voici celles que nous avons implémentées : 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [x] Se connecter via son email
+- [x] Se déconnecter
+- [x] S'inscrire
+- [x] Lister les utilisateurs
+- [x] Modifier les informations d'un utilisateur
+- [x] Supprimer un utilisateur
+- [x] Rechercher un utilisateur par son id
+- [ ] Rechercher un utilisateur par son nom
+- [x] Lister les associations
+- [x] Rechercher une association par son id
+- [ ] Rechercher une association par son nom
+- [x] Créer une association
+- [x] Supprimer une association
+- [x] Modifier une association (nom et description)
+- [x] Modifier les membres d'une association (ajout et suppression de membres)
+- [x] Modifier les roles des membres d'une association
+- [x] Accéder aux minutes d'une association
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Nous avons souhaité nous connecter via l'email et non l'id car nous trouvons cela plus facile pour l'utilisateur. Le temps nous a manqué pour pouvoir rechercher un utilisateur et une association par leur nom.
