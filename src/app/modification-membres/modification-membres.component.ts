@@ -5,7 +5,7 @@ import {NavComponent} from "../nav/nav.component";
 import {KeyValuePipe, NgForOf, UpperCasePipe} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {User} from "../users-page/users-page.component";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {ApiHelperService} from "../services/api-helper.service";
 import {lastValueFrom, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
@@ -22,7 +22,9 @@ import {RoleValue} from "./role.enum";
     ReactiveFormsModule,
     UpperCasePipe,
     FormsModule,
-    KeyValuePipe
+    KeyValuePipe,
+    RouterLinkActive,
+    RouterLink
   ],
   templateUrl: './modification-membres.component.html',
   styleUrl: './modification-membres.component.css'

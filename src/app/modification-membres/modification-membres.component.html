@@ -4,6 +4,7 @@
     <h2>MODIFIER LES MEMBRES</h2>
     <div id="form">
         <div class = "info">
+          <h5>Membres</h5>
           <ul class = "list">
             <li *ngFor = "let member of membersModified.concat(newMembers)">
               <div class= elem>
@@ -34,12 +35,14 @@
               {{ user.firstname + " "}}{{user.lastname | uppercase}}
             </option>
           </select>
-          <button (click)="addMember()" class="btn btn-primary">Ajouter</button>
+          <button (click)="addMember()" class="btn btn-primary" id ="ajouter">Ajouter</button>
         </div>
       </div>
     </div>
-  <div class="row justify-content-center mt-4">
+  <div class = centered>
     <button (click)="validate()" class="btn btn-primary">Confirmer</button>
+    <p id = "no-user">Votre membre n'est pas encore utilisateur ?</p>
+    <button [routerLink]="['/register']" routerLinkActive = "active" class="btn btn-primary" id = "register">Créer un utilisateur</button>
   </div>
 
 
