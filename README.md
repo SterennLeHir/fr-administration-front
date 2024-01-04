@@ -37,3 +37,9 @@ Au niveau des fonctionnalités, voici celles que nous avons implémentées :
 - [x] Accéder aux minutes d'une association
 
 Nous avons souhaité nous connecter via l'email et non l'id car nous trouvons cela plus facile pour l'utilisateur. Le temps nous a manqué pour pouvoir rechercher un utilisateur et une association par leur nom.
+
+## Conception
+
+Pour les formulaires, nous avons généralement utilisé des ReactiveForm, notamment pour les modifications des informations (utilisateur ou association). Cela permet d'attribuer la valeur initiale des champs à la valeur des attributs des associations ou des utilisateurs, comme le montre l'exemple ci-deesous pour l'utilisateur Alexandre Lecomte. 
+![](images/compte.png)
+![](images/modification_compte.png)
