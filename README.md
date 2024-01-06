@@ -49,3 +49,4 @@ Nous avons également utilisé des formGroup et FormControl dans lesquels nous a
 Au niveau des composants, nous avons remarqué que la liste des participants à une minute est similaire à la liste des membres d'une association, nous avons donc créer un composant qui sera un composant enfant de association-detail-item et minute. En Input, il récupère la liste des User à afficher sous la forme d'une table. 
 ![](images/liste_membres.png)
 
+Quand une URl est invalide (route inexistante, accès à un(e) utilisateur/association inconnu(e)), nous renvoyons sur une page 404 Page Not Found que nous avons créé.
