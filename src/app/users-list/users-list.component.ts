@@ -25,6 +25,7 @@ export class UsersListComponent implements OnInit {
   roles = new Map();
 
   ngOnInit(): void {
+    console.log("init user lists");
     for (const member of this.members) {
         this.api.get({endpoint : '/roles/' + member.id + '/' + this.id}).then(response => {
           console.log(response.name);

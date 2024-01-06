@@ -45,8 +45,10 @@ export class ModificationMembresComponent implements OnInit {
     this.route.paramMap
       .subscribe(res => {
         const id = res.get("id");
+        console.log(`id ${id}`);
         if (id != null) {
           this.assocId = +id;
+          console.log("recuperation des membres");
           this.api.get({endpoint: '/associations/' + id + '/members'})
             .then(response => {
             this.members = response; // tableau initial qui ne changera pas durant la modification
@@ -57,13 +59,19 @@ export class ModificationMembresComponent implements OnInit {
                 for (let i = 0; i < this.members.length; i++) {
                   // attribution du rôle à chaque membre
                   this.members[i].role = responses[i].name;
+                  console.log(`role ${responses[i].name}`)
                 }
+                console.log("Membres initialisation :");
+                console.log(JSON.stringify(this.members));
                 // copie du tableau de membres avec les rôles attribués
                 this.membersModified = this.members.map(member => ({...member}));
+                console.log("Copie initialisation :");
+                console.log(JSON.stringify(this.membersModified));
               })
               .then(response => {
                 const userRequest: Observable<any> = this.http.get('http://localhost:3000/users', {observe: 'response'});
                 lastValueFrom(userRequest).then(response => this.users = response.body);
+                console.log("recuperation des utilisateurs");
               })
           })
             .catch(e => this.router.navigateByUrl('404'));
@@ -75,10 +83,10 @@ export class ModificationMembresComponent implements OnInit {
     this.api.put({ endpoint: '/associations/'+ this.assocId,
       data: { idUsers: this.membersToId()}}).then(response => {
       this.router.navigateByUrl('/associations/'+ this.assocId);
-      console.log(`Utilisateur ajoutés dans l'association`)
-    })
+      console.log(`Utilisateurs ajoutés dans l'association`)
+    }).then(() => this.modifyRoles());
     // On met à jour les rôles
-    this.modifyRoles();
+
   };
 
   modifyRoles() {
@@ -86,6 +94,7 @@ export class ModificationMembresComponent implements OnInit {
     console.log("Anciens membres");
     console.log(JSON.stringify(this.membersModified));
     for (const member of this.membersModified) {
+      console.log("boucle put");
       this.api.put({ endpoint: '/roles/'+ member.id + '/' + this.assocId,
         data: { name: member.role}}).then(response => {
         console.log(`role modifié pour l'utilisateur ${member.id} dans l'association ${this.assocId}`);
@@ -95,10 +104,13 @@ export class ModificationMembresComponent implements OnInit {
     console.log(JSON.stringify(this.newMembers));
     // création des rôles pour tous les nouveaux membres
     for (const newMember of this.newMembers) {
+      console.log("boucle post");
+      console.log("role à créer pour le membre : ");
+      console.log(JSON.stringify(newMember));
       this.api.post({ endpoint: '/roles',
         data: { name: newMember.role, idUser : newMember.id, idAssociation : this.assocId}}).then(response => {
         console.log(`role créé pour l'utilisateur ${newMember.id} dans l'association ${this.assocId}`);
-      })
+      }).catch(e => console.log("oups problème"));
     }
     console.log("Membres à supprimer");
     console.log(this.membersToDeleteId);
@@ -138,8 +150,10 @@ export class ModificationMembresComponent implements OnInit {
       // on regarde si c'est un nouveau membre ou un présent dans la liste initiale
       const idInInitialList= this.members.findIndex(member => this.selectedUser.id === member.id);
       if(idInInitialList !== -1) { // si c'est un ancien membre on modifie son role
+        console.log("ancien membre");
         this.membersModified.push(this.selectedUser);
       } else { // si c'est un nouveau membre on l'ajoute à la liste des nouveaux membres
+        console.log("nouveau membre");
         this.newMembers.push(this.selectedUser);
       }
       console.log('Adding member:', JSON.stringify(this.selectedUser));
@@ -147,8 +161,7 @@ export class ModificationMembresComponent implements OnInit {
     }
   }
   private membersToId(): number[]{
-    this.membersModified = this.membersModified.concat(this.newMembers);
-    return this.membersModified.map(member => member.id);
+    return this.membersModified.concat(this.newMembers).map(member => member.id);
   }
   protected readonly RoleValue = RoleValue;
   protected readonly Object = Object;
