@@ -14,6 +14,7 @@ import {ModificationPasswordComponent} from "./modification-password/modificatio
 import {CreationAssociationComponent} from "./creation-association/creation-association.component";
 import {MinuteComponent} from "./minute/minute.component";
 import {ModificationMembresComponent} from "./modification-membres/modification-membres.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 export const routes: Routes = [
   {path: 'users', component: UsersPageComponent, canActivate:[authGuard]},
@@ -31,6 +32,6 @@ export const routes: Routes = [
   {path: 'modifier-mot-de-passe', component:ModificationPasswordComponent, canActivate:[authGuard]},
   {path: 'creer-association', component:CreationAssociationComponent, canActivate:[authGuard]},
   {path: '', component: LoginComponent},
-  {path: '*', component: LoginComponent},
+  {path: '**', component: PageNotFoundComponent},
 
 ];

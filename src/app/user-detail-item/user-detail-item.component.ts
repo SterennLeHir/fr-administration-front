@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {NgForOf, NgIf, UpperCasePipe} from "@angular/common";
 import {ApiHelperService} from "../services/api-helper.service";
@@ -23,14 +23,14 @@ import {UserItemComponent} from "../user-item/user-item.component";
 })
 export class UserDetailItemComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private api: ApiHelperService) {}
+  constructor(private route: ActivatedRoute, private api: ApiHelperService, private router: Router) {}
 
   ngOnInit(): void {
     this.route.paramMap
       .subscribe(res => {
         const id = res.get("id");
         if (id != null) {
-          this.api.get({endpoint : '/users/'+id}).then(response => this.user = response);
+          this.api.get({endpoint : '/users/'+id}).then(response => this.user = response).catch(e => this.router.navigateByUrl('*'));
           this.api.get({endpoint : '/associations/' + id + '/associations'}).then(response => {
             this.associations = response;
             for (const asso of this.associations) {

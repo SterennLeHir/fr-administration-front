@@ -37,7 +37,8 @@ export class ModificationInfosComponent implements OnInit {
     if (Number.isNaN(this.id)) this.router.navigateByUrl('/login');
     this.api.get({ endpoint: `/users/${this.id}` }).then((response) => {
       this.profile.patchValue(response);
-    });
+    })
+      .catch(e => this.router.navigateByUrl('404'));
   }
   submit(e: Event): void {
     e.preventDefault();

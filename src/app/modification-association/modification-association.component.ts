@@ -47,7 +47,8 @@ export class ModificationAssociationComponent implements OnInit{
           const userRequest: Observable<any> = this.http.get(`http://localhost:3000/associations/${this.assocId}`, { observe: 'response' });
           lastValueFrom(userRequest).then( response => {
             this.association.patchValue(response.body);
-          });
+          })
+            .catch(e => this.router.navigateByUrl('404'));
         }
       })
   }

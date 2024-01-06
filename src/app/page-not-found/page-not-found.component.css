@@ -1,0 +1,22 @@
+.main {
+  height: 80%;
+  width: 100%;
+  display: table;
+}
+.wrapper {
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+button {
+  border-radius: 18px;
+}
+row justify-content-center mt-4 {
+  display: flex;
+  justify-content: space-between;
+}

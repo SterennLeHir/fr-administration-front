@@ -47,7 +47,8 @@ export class ModificationMembresComponent implements OnInit {
         const id = res.get("id");
         if (id != null) {
           this.assocId = +id;
-          this.api.get({endpoint: '/associations/' + id + '/members'}).then(response => {
+          this.api.get({endpoint: '/associations/' + id + '/members'})
+            .then(response => {
             this.members = response; // tableau initial qui ne changera pas durant la modification
             // Promise.all pour attendre la fin de toutes les requêtes asynchrones
             Promise.all(this.members.map(member => this.api.get({endpoint: '/roles/' + member.id + '/' + id})))
@@ -65,6 +66,7 @@ export class ModificationMembresComponent implements OnInit {
                 lastValueFrom(userRequest).then(response => this.users = response.body);
               })
           })
+            .catch(e => this.router.navigateByUrl('404'));
         }
       })
   }

@@ -48,7 +48,8 @@ export class AssociationDetailItemComponent implements OnInit{
         this.id = res.get("id");
         if (this.id != null) {
           const userRequest: Observable<any> = this.http.get('http://localhost:3000/associations/'+this.id, { observe: 'response' });
-          lastValueFrom(userRequest).then(response => this.association = response.body);
+          lastValueFrom(userRequest).then(response => this.association = response.body)
+            .catch(e => this.router.navigateByUrl('404'));
           /*this.api.get({endpoint : '/associations/'+id}).then(response => {
             console.log(response);
             this.association = response;

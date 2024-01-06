@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ApiHelperService} from "../services/api-helper.service";
 import {Minute} from "../association-detail-item/association-detail-item.component";
 import {FooterComponent} from "../footer/footer.component";
@@ -23,7 +23,7 @@ import {UsersListComponent} from "../users-list/users-list.component";
   styleUrl: './minute.component.css'
 })
 export class MinuteComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private api: ApiHelperService){}
+  constructor(private route: ActivatedRoute, private api: ApiHelperService, private router : Router){}
 
   ngOnInit(): void {
   console.log(this.route.paramMap);
@@ -36,7 +36,8 @@ export class MinuteComponent implements OnInit {
             this.minute = response;
             this.voters = this.minute.voters;
             this.idAssociation = response.association.id ;
-          });
+          })
+            .catch(e => this.router.navigateByUrl('404'));
         }
       })
     }
