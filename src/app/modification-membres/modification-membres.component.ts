@@ -75,6 +75,7 @@ export class ModificationMembresComponent implements OnInit {
     this.api.put({ endpoint: '/associations/'+ this.assocId,
       data: { idUsers: this.membersToId()}}).then(response => {
       this.router.navigateByUrl('/associations/'+ this.assocId);
+      console.log(`Utilisateur ajoutés dans l'association`)
     })
     // On met à jour les rôles
     this.modifyRoles();
@@ -82,12 +83,16 @@ export class ModificationMembresComponent implements OnInit {
 
   modifyRoles() {
     // mise à jour des rôles pour tous les anciens membres
+    console.log("Anciens membres");
+    console.log(JSON.stringify(this.membersModified));
     for (const member of this.membersModified) {
       this.api.put({ endpoint: '/roles/'+ member.id + '/' + this.assocId,
         data: { name: member.role}}).then(response => {
         console.log(`role modifié pour l'utilisateur ${member.id} dans l'association ${this.assocId}`);
       })
     }
+    console.log("Nouveaux membres");
+    console.log(JSON.stringify(this.newMembers));
     // création des rôles pour tous les nouveaux membres
     for (const newMember of this.newMembers) {
       this.api.post({ endpoint: '/roles',
@@ -95,6 +100,8 @@ export class ModificationMembresComponent implements OnInit {
         console.log(`role créé pour l'utilisateur ${newMember.id} dans l'association ${this.assocId}`);
       })
     }
+    console.log("Membres à supprimer");
+    console.log(this.membersToDeleteId);
     for (let i = 0; i < this.membersToDeleteId.length; i++) { // suppression des rôles pour tous les nouveaux membres
       this.api.delete({ endpoint: '/roles/'+ this.membersToDeleteId[i] + '/' + this.assocId}).then(response => {
         console.log(`role supprimé pour l'utilisateur ${this.membersToDeleteId[i]} dans l'association ${this.assocId}`);
@@ -103,9 +110,10 @@ export class ModificationMembresComponent implements OnInit {
   }
 
   deleteMember(user:User): void{
-    const i = this.members.indexOf(user); // position du user dans la liste initiale
+    const i = this.members.findIndex(member => user.id === member.id); // position du user dans la liste initiale
     if (i !== -1) { // on l'ajoute aux membres à supprimer que s'il appartenait à la liste initiale
       this.membersToDeleteId.push(this.members[i].id);
+      console.log("membres à supprimer");
     }
     // on le supprime de la liste modifiée ou de la liste des nouveaux users
     const i2 = this.newMembers.findIndex(member => user.id === member.id); // position du user dans la liste modifiée
