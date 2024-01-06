@@ -41,3 +41,9 @@ a {
   border-radius: 18px;
 }
 
+.oval-button {
+  font-size: 20px !important;
+  padding: 20px 100px;
+  line-height: 0.1; /* Ajustez la line-height pour aligner le texte au centre */
+  border-radius: 18px;
+}
