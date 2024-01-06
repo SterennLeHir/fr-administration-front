@@ -1,6 +1,4 @@
-div {
-  text-align: center;
-}
+
 
 h2 {
   margin-top: 5%;
@@ -19,5 +17,9 @@ p {
 
 .informations {
   display:flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.info{
+  width: 70%;
 }

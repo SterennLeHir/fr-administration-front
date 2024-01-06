@@ -28,3 +28,12 @@ input {
 #error {
   color: red;
 }
+
+#cherche{
+  line-height: 1; /* Set line-height to 1 or adjust as needed */
+  border: 4px solid;
+  box-sizing: border-box;
+  border-radius: 18px;
+  border-color: #0A369D !important;
+  vertical-align: middle;
+}
