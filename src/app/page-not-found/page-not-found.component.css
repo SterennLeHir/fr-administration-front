@@ -1,22 +1,26 @@
-.main {
-  height: 80%;
-  width: 100%;
-  display: table;
-}
+
 .wrapper {
-  display: table-cell;
-  height: 100%;
-  vertical-align: middle;
+  display: flex;
+  justify-content: space-around;
 }
 
 h1 {
   margin-bottom: 50px;
+  font-family : Inter, sans-serif;
+  line-height: 100px;
 }
 
 button {
+  margin-top: 50px;
   border-radius: 18px;
+  width:250px;
 }
-row justify-content-center mt-4 {
+.text {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  width: 40%;
 }
