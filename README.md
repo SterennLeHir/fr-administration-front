@@ -13,9 +13,9 @@ Pour concevoir notre site, nous avons dans un premier temps réalisé une maquet
 ## Structure
 
 Les diagrammes ci-dessous représente respectivement les liens entre les pages et les routes possibles de l'application.
-A INSERER. 
-![](images/pages.png)
+![](images/site_map.png)
 ![](images/routes.png)
+
 ## Fonctionnalités
 
 Au niveau des fonctionnalités, voici celles que nous avons implémentées : 
@@ -50,3 +50,5 @@ Au niveau des composants, nous avons remarqué que la liste des participants à 
 ![](images/liste_membres.png)
 
 Quand une URl est invalide (route inexistante, accès à un(e) utilisateur/association inconnu(e)), nous renvoyons sur une page 404 Page Not Found que nous avons créé.
+
+![](images/page_not_found.png)
