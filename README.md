@@ -15,7 +15,8 @@ Nous avons choisi une police moderne Google Font, facile d'implémentation grâc
 ## Structure
 
 Les diagrammes ci-dessous représente respectivement les liens entre les pages et les routes possibles de l'application.
-![](images/site_map.png =200x)
+<img src="images/site_map.png" width="200"/>
+
 ![](images/routes.png)
 
 ## Fonctionnalités
