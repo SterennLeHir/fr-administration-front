@@ -46,21 +46,21 @@ Nous avons souhaité nous connecter via l'email et non l'id car nous trouvons ce
 
 Pour les formulaires, nous avons généralement utilisé des ReactiveForm, notamment pour les modifications des informations (utilisateur ou association). Cela permet d'attribuer la valeur initiale des champs à la valeur des attributs des associations ou des utilisateurs, comme le montre l'exemple ci-deesous pour l'utilisateur Alexandre Lecomte. 
 
-<div><img src="images/compte.png" width="70%" align="center"/></div>
+<div align="center"><img src="images/compte.png" width="70%" align="center"/></div>
 
-<div><img src="images/modification_compte.png" width="70%" align="center"/></div>
+<div align="center"><img src="images/modification_compte.png" width="70%" align="center"/></div>
 
 Nous avons également utilisé des formGroup et FormControl dans lesquels nous avons ajouté des Validors, pour rendre nos champs obligatoires et/ou pour imposer une valeur minimale (ex : un utilisateur doit être majeur => age >= 18). Avec *ngIf, nous affichons des éléments (des messages d'erreur plus particulièrement) quand les valeurs ne respectent pas ce qui est attendu. 
 
 Pour la page des utilisateurs et des associations, nous avons utilisé Material pour ses cards, faciles d'implémentations et d'utilisation. 
 
-<div><img src="images/users.png" width="70%" align="center"/></div>
+<div align="center"><img src="images/users.png" width="70%" /></div>
 
 Au niveau des composants, nous avons remarqué que la liste des participants à une minute est similaire à la liste des membres d'une association, nous avons donc créer un composant qui sera un composant enfant de association-detail-item et minute. En Input, il récupère la liste des User à afficher sous la forme d'une table. 
 
-<div><img src="images/liste_membres.png" width="70%" align="center"/></div>
+<div align="center"><img src="images/liste_membres.png" width="70%" align="center"/></div>
 
 
 Quand une URL est invalide (route inexistante, accès à un(e) utilisateur/association inconnu(e)), nous renvoyons sur une page 404 Page Not Found que nous avons créé.
 
-<div><img src="images/page_not_found.png" width="70%" align="center"/></div>
+<div align="center"><img src="images/page_not_found.png" width="70%" align="center"/></div>
