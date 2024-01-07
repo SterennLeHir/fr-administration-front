@@ -2,7 +2,10 @@
 <div class = "container">
   <h2>LES UTILISATEURS</h2>
   <p>Ici vous trouverez la liste complète des membres des différentes associations. Vous pouvez également en chercher un en particulier !</p>
-  <input id = "cherche" type = "search" (keydown)="search($event)" placeholder="Je cherche un utilisateur">
+  <div id = "search-input">
+    <input id = "cherche" type = "search" (keydown)="search($event)" placeholder="Je cherche un utilisateur">
+  </div>
+
   <div *ngIf="message">
     <p id="error">{{message}}</p>
   </div>

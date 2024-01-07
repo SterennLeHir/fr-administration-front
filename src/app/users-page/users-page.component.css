@@ -15,6 +15,10 @@ h2{
   margin-bottom: 50px;
 }
 
+#search-input{
+  display:flex;
+  justify-content: end;
+}
 input {
   border-radius: 18px;
   width: 20%;
@@ -23,6 +27,8 @@ input {
   background-image: url("../../assets/images/Search.svg");
   background-repeat: no-repeat;
   background-position: right;
+  outline : none;
+  height: 35px;
 }
 
 #error {

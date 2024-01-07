@@ -22,11 +22,13 @@ nav{
 .menu1 a {
   color: #0A369D;
   margin-right: 40px;
+  font-size: 18px;
 }
 
 .menu2 a {
   color: #0A369D;
   margin-left: 40px;
+  font-size: 18px;
 }
 
 #line{

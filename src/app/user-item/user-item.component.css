@@ -14,8 +14,7 @@ mat-card {
 }
 
 mat-card-content {
-  height: 100%; /* Utilisez la hauteur à 100% pour remplir toute la hauteur de la carte */
-  /* Autres styles pour le contenu de la carte */
+  height: 100%;
 }
 
 .container button {

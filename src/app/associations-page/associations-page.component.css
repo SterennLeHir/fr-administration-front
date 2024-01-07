@@ -21,6 +21,7 @@ h2{
   background-color: #0A369D ;
   color:white ;
   border-radius: 18px;
+  margin-left:40px;
 }
 
 #buttons{
@@ -38,6 +39,8 @@ input {
   background-image: url("../../assets/images/Search.svg");
   background-repeat: no-repeat;
   background-position: right;
+  outline : none;
+  line-height: 1;
 }
 
 #error {
