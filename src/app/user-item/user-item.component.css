@@ -11,8 +11,6 @@ mat-card {
   border: 3px solid #0A369D;
   padding: 0;
   border-radius: 30px;
-  width: 300px; /* Définissez la largeur souhaitée pour la carte */
-  height: 200px; /* Définissez la hauteur souhaitée pour la carte */
 }
 
 mat-card-content {
