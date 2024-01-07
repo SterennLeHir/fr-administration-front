@@ -39,27 +39,12 @@ h1,p {
   margin-bottom: 50px;
 }
 
-.oval-button {
-  font-size: 20px !important;
-  padding: 20px 100px;
-  line-height: 0.1; /* Ajustez la line-height pour aligner le texte au centre */
-  border-radius: 18px;
-}
-
 #left {
 margin-right: 2.5%
 }
 
 #right {
   margin-left: 2.5%;
-  line-height: 0.1; /* Set line-height to 1 or adjust as needed */
-  background-color: white !important;
-  color:#0A369D ;
-  border: 4px solid;
-  box-sizing: border-box;
-  border-radius: 18px;
-  border-color: #0A369D !important;
-  vertical-align: middle;
 }
 
 .erreur p {

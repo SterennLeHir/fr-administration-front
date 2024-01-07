@@ -12,18 +12,15 @@ mat-card {
   border: 3px solid #0A369D;
   padding: 0;
   border-radius: 30px;
-  width: 550px; /* Définissez la largeur souhaitée pour la carte */
-  height: 300px; /* Définissez la hauteur souhaitée pour la carte */
 }
 
 mat-card-content {
-  height: 100%; /* Utilisez la hauteur à 100% pour remplir toute la hauteur de la carte */
-  /* Autres styles pour le contenu de la carte */
+  height: 100%;
 }
+
 a {
   border-radius: 18px;
   background-color: #0A369D;
   color: white;
 }
-
 

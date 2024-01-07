@@ -3,7 +3,7 @@
     <div class = "container" *ngIf="myData">
       <h3>{{myData.name}}</h3>
       <p>{{myData.description}}</p>
-      <a [routerLink]="['/associations', myData.id]" routerLinkActive = "active" class="btn btn-primary" id = "btn right">Voir plus</a>
+      <button [routerLink]="['/associations', myData.id]" routerLinkActive = "active" class="btn btn-primary" id = "btn right">Voir plus</button>
     </div>
   </mat-card-content>
 </mat-card>

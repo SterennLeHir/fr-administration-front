@@ -19,6 +19,7 @@ h2{
   display:flex;
   justify-content: end;
 }
+
 input {
   border-radius: 18px;
   width: 20%;
@@ -30,7 +31,10 @@ input {
   outline : none;
   height: 35px;
 }
-
+input::placeholder {
+  color: #0A369D;
+  font-family: Inter, sans-serif;
+}
 #error {
   color: red;
 }
