@@ -30,6 +30,8 @@ export class UsersListComponent implements OnInit {
         this.api.get({endpoint : '/roles/' + member.id + '/' + this.id}).then(response => {
           console.log(response.name);
           this.roles.set(member, response.name);
+          console.log("la map est :");
+          console.log(this.roles);
         });
     }
   }
