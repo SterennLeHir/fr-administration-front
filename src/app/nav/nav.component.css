@@ -19,16 +19,16 @@ nav{
   align-items: center;
 }
 
-.menu1 a {
+.menu1 a, .menu2 a {
   color: #0A369D;
-  margin-right: 40px;
   font-size: 18px;
+  cursor : pointer;
 }
-
+.menu1 a {
+  margin-right: 40px;
+}
 .menu2 a {
-  color: #0A369D;
   margin-left: 40px;
-  font-size: 18px;
 }
 
 #line{
