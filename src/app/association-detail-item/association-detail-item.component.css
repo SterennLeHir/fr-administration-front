@@ -40,6 +40,10 @@ img {
   align-items: center;
 }
 
+.list{
+  padding-right: 40px;
+}
+
 #modif {
   background-color: #0A369D;
   color:white;

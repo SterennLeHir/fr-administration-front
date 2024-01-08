@@ -29,3 +29,7 @@ img {
   display:flex;
   justify-content: space-evenly;
 }
+
+.list{
+  padding-right: 40px;
+}
