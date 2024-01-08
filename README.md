@@ -8,7 +8,7 @@ A la racine du projet, lancez `ng serve --open` pour lancer le serveur Angular. 
 
 ## Prototype
 
-Pour concevoir notre site, nous avons dans un premier temps réalisé une maquette sur Figma, disponible [ici]([https://www.figma.com/proto/SjSrg8LIlCfCPDhcexwbzI/Maquette-WM?type=design&node-id=53-222&t=UNXyD6K2QHa3EE9E-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=7%3A288](https://www.figma.com/proto/SjSrg8LIlCfCPDhcexwbzI/Maquette-WM?type=design&node-id=7-288&t=njYZBv6gG1S54qhm-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=7%3A288&mode=design)).
+Pour concevoir notre site, nous avons dans un premier temps réalisé une maquette sur Figma, disponible [ici](https://www.figma.com/proto/SjSrg8LIlCfCPDhcexwbzI/Maquette-WM?type=design&node-id=53-222&t=UNXyD6K2QHa3EE9E-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=7%3A288](https://www.figma.com/proto/SjSrg8LIlCfCPDhcexwbzI/Maquette-WM?type=design&node-id=7-288&t=njYZBv6gG1S54qhm-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=7%3A288&mode=design)).
 
 Nous avons choisi une police moderne Google Font, facile d'implémentation grâce à l'API Google. Nous avons élaboré un design sobre, avec le bleu comme couleur tonique. Il fait ressortir facilement les éléments et est une couleur calme et rassurante. C'est aussi généralement la couleur utilisée par les services publics. 
 
