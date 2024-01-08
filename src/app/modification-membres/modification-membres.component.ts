@@ -38,7 +38,6 @@ export class ModificationMembresComponent implements OnInit {
   public membersModified : User[] = []// membres au cours de la modification
   public users !: User[];
   public selectedUser !:User;
-  public selectedRole !: RoleValue;
   public membersToDeleteId : number[] = []; // id des membres qui ont été supprimés
   public newMembers : User[] = []; // utilisateurs qui viennent de devenir membre
   ngOnInit(): void {

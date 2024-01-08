@@ -13,18 +13,15 @@
                 <mat-icon>delete</mat-icon>
               </span>
                   {{ member.firstname + " "}}{{member.lastname | uppercase}}
-
                 </div>
                 <div class="roles">
                   <select [(ngModel)]="member.role">
-                    <option *ngFor="let role of Object.values(RoleValue) | keyvalue" [selected]="selectedRole">
+                    <option *ngFor="let role of Object.values(RoleValue) | keyvalue">
                       {{role.value}}
                     </option>
                   </select>
-
                 </div>
               </div>
-
             </li>
           </ul>
         </div>
