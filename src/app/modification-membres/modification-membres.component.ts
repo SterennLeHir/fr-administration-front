@@ -94,7 +94,7 @@ export class ModificationMembresComponent implements OnInit {
     console.log("Anciens membres");
     console.log(JSON.stringify(this.membersModified));
     for (const member of this.membersModified) {
-      console.log("boucle put");
+      //console.log("boucle put");
       this.api.put({ endpoint: '/roles/'+ member.id + '/' + this.assocId,
         data: { name: member.role}}).then(response => {
         console.log(`role modifié pour l'utilisateur ${member.id} dans l'association ${this.assocId}`);
@@ -104,7 +104,7 @@ export class ModificationMembresComponent implements OnInit {
     console.log(JSON.stringify(this.newMembers));
     // création des rôles pour tous les nouveaux membres
     for (const newMember of this.newMembers) {
-      console.log("boucle post");
+      //console.log("boucle post");
       console.log("role à créer pour le membre : ");
       console.log(JSON.stringify(newMember));
       this.api.post({ endpoint: '/roles',

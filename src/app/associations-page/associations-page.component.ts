@@ -53,7 +53,6 @@ export class AssociationsPageComponent implements OnInit {
       this.dataSource = [];
       const request: Observable<any> = this.http.get('http://localhost:3000/associations/' + searchTerm, {observe: 'response'});
       lastValueFrom(request).then(response => {
-        console.log("pas d'erreur");
         this.dataSource.push(response.body);
         this.message = "";
       })

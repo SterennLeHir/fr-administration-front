@@ -27,8 +27,10 @@ h1 {
 
 .erreur {
   display: flex;
-  flex-direction : row;
+  flex-direction : column;
   text-align: center;
+  align-self: center;
+  align-items: center;
 }
 
 .erreur{
@@ -46,4 +48,12 @@ a {
   padding: 20px 100px;
   line-height: 0.1; /* Ajustez la line-height pour aligner le texte au centre */
   border-radius: 18px;
+}
+
+#regi{
+  margin-bottom: 2%;
+}
+
+#seco{
+  margin-bottom: 5%;
 }

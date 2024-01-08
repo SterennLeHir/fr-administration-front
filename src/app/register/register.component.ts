@@ -75,12 +75,10 @@ export class RegisterComponent {
   register(): void {
     console.log("registering...");
     if (this.passwordControl()?.value !== this.confirmPasswordControl()?.value) {
-      console.log("pas okay");
       this.badPassword = "Les mots de passe sont différents";
       this.passwordControl()?.setValue('');
       this.confirmPasswordControl()?.setValue('');
     } else if (!this.allElementsRequired()) {
-      console.log("pas okay 2");
       this.nullInputs = "Veuillez remplir tous les champs obligatoires";
     }
     else {
@@ -92,7 +90,7 @@ export class RegisterComponent {
         })
       })
         .catch((error) => {
-          this.messageError = error.error.message;
+          this.messageError = "L'utilisateur existe déjà";//error.error.message;
         })
     }
 

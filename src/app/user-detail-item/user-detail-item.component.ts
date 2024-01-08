@@ -34,7 +34,7 @@ export class UserDetailItemComponent implements OnInit {
           this.api.get({endpoint : '/associations/' + id + '/associations'}).then(response => {
             this.associations = response;
             for (const asso of this.associations) {
-              console.log("Boucle for");
+              //console.log("Boucle for");
               console.log(asso);
               const idAsso = asso.id;
               /*const role = this.api.get({endpoint : '/roles/' + id + '/'+ idAsso}).then(res => {

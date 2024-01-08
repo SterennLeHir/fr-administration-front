@@ -53,12 +53,12 @@
       </div>
       <div class = "erreur" *ngIf="nullInputs"> {{nullInputs}}</div>
       <div class="row justify-content-center mt-4">
-        <button (click) = "register()" class="btn btn-primary oval-button">Inscription</button>
+        <button id = "regi" (click) = "register()" class="btn btn-primary oval-button">Inscription</button>
       </div>
       <div class = "erreur" *ngIf="messageError">
         {{messageError}}
         <div class="row justify-content-center mt-4">
-          <a [routerLink]="['/login']" routerLinkActive = "active" class="btn btn-primary">Se connecter</a>
+          <button id = "seco" [routerLink]="['/login']" routerLinkActive = "active" class="btn btn-primary oval-button">Se connecter</button>
         </div>
       </div>
     </form>
